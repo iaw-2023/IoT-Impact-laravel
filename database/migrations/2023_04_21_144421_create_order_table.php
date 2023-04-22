@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->string('customer_email');
-            $table->float('total_amount');
+            $table->float('total_amount')->unsigned();
         });
     }
 

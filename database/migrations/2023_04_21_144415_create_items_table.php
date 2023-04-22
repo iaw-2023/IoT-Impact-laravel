@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('items', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->integer('quantify');
+            $table->integer('quantify')->unsigned();
         });
     }
 
