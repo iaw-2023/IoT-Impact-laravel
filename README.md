@@ -50,7 +50,7 @@ Se podrán obtener y modificar por API las siguientes entidades:
 - Order
 - Items
 
-**DETALLES DEL PROYECTO JAVASCRIPT - REACT/VUE:**
+# DETALLES DEL PROYECTO JAVASCRIPT - REACT/VUE:
 
 # INFORMACIÓN OBSERVABLE POR EL USUARIO
 
