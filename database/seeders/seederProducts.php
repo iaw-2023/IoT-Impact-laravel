@@ -4,6 +4,8 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
+
 
 class seederProducts extends Seeder
 {
@@ -14,7 +16,7 @@ class seederProducts extends Seeder
      */
     public function run()
     {
-        $itemsData = [
+        $productsData = [
             [
                 'id' => 1,
                 'name' => 'BigMac',
@@ -49,6 +51,6 @@ class seederProducts extends Seeder
             ],
         ];
 
-        DB::table('items')->insert($itemsData);
+        DB::table('products')->insert($productsData);
     }
 }
