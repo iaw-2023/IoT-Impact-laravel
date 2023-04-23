@@ -30,15 +30,9 @@ Cada cliente podrá hacer un pedido a el establecimiento de comida, en donde se 
 
 # ENTIDADES ACTUALIZABLES
 
-Se podrán actualizar todas las entidades: products, items, order, product\_category.
-
-Creo que es solamente éstos:
-
+Se podrán actualizar:
 - Products
-- Products\_Category
-
-Porque acá estamos en el proyecto de Laravel, osea en la interfaz para los empleados… Creo q tienen q poder editar los productos y las categorias nomas….
- Despues las entidades Items y Pedidos seria solamente en React pq es lo q usan los clientes
+- Products_Category
 
 # REPORTES
 
@@ -52,14 +46,9 @@ Se pueden generar los siguientes **reportes** :
 
 # OBTENCIÓN Y MODIFICACIÓN MEDIANTE API
 
-Se podrán obtener y modificar por API todas las entidades.
-
-Creo que serían nomas éstas :
-
+Se podrán obtener y modificar por API las siguientes entidades:
 - Order
 - Items
-
-Pq la API es para q React se conecte a ella mepa, entonces es basicamente lo q los clientes van a usar… son solamente sus pedidos y sus items
 
 **DETALLES DEL PROYECTO JAVASCRIPT - REACT/VUE:**
 
