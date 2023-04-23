@@ -17,7 +17,7 @@ return new class extends Migration
             $table->integer('quantity')->unsigned();
             $table->unsignedBigInteger('order_id');
             $table->unsignedBigInteger('product_id');
-            $table->foreign('order_id')->references('id')->on('order')->onDelete('cascade');
+            $table->foreign('order_id')->references('id')->on('orders')->onDelete('cascade');
             //Clave foranea que referencia al id de la orden correspondiente.
             //onDelete asegura que cuando se borra una orden, todos los items asociados tambien se borraran.
             $table->foreign('product_id')->references('id')->on('products');     
