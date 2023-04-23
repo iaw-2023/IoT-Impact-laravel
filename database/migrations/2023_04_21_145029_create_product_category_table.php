@@ -16,6 +16,11 @@ return new class extends Migration
             $table->timestamps();
             $table->string('name');
             $table->string('description');
+            $table->unsignedBigInteger('product_id');
+            $table->foreign('product_id')->references('id')->on('products')->onDelete('cascade');
+            //Clave foranea que referencia al id del producto correspondiente.
+            //onDelete asegura que si el producto se elimina, todas las entradas de esta tabla que contienen ese
+            //producto se borraran tambien.
         });
     }
 
