@@ -14,9 +14,13 @@ return new class extends Migration
         Schema::create('products', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+
             $table->string('name');
             $table->decimal('price', 10, 2);
             $table->integer('stock')->unsigned();
+
+            $table->unsignedBigInteger('product_category_id');
+            $table->foreign('product_category_id')->references('id')->on('product_category');
         });
     }
 
