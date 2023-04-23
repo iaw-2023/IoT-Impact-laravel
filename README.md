@@ -10,18 +10,6 @@ Departamento de Ciencias e Ingeniería de Computación
 
 **Ingeniería de aplicaciones web - 2023**
 
-#
-
-#
-
-#
-
-#
-
-#
-
-#
-
 # IDEA DEL PROYECTO
 
 Se presenta una aplicación web dedicada al registro de gestión de pedidos de productos de un establecimiento de venta de comida. Los clientes podrán realizar pedidos de comida, y los empleados podrán gestionarlos.
