@@ -51,3 +51,21 @@ También podrá ver su pedido actual y su historial de pedidos.
 ### ACCIONES REALIZABLES POR EL USUARIO
 
 El usuario podrá armar su pedido agregando productos a su carrito, para luego decidir si cancelar su compra o confirmar su pedido. Luego podrá consultar el mismo o consultar su historial de pedidos.
+
+---
+
+
+### Extras:
+
+#### Comandos útiles:
+En la carpeta raíz del proyecto:
+
+``` 
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan serve
+```
+#### Docker
+En la carpeta [db-setup-docker](db-setup-docker/) se encuentra el archivo [docker-compose.yml](db-setup-docker/docker-compose.yml), el cual levanta PostgreSQL y pgAdmin.
+
