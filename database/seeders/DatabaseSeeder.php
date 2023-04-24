@@ -12,11 +12,10 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        // \App\Models\User::factory(10)->create();
-
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        //Respetar este orden en el seeding para evitar errores con las llaves foraneas.
+        $this->call(seederProductCategory::class); // Include the seeder class for the 'items' table
+        $this->call(seederProducts::class); // Include the seeder class for the 'items' table
+        $this->call(seederOrders::class); // Include the seeder class for the 'items' table
+        $this->call(seederItems::class); // Include the seeder class for the 'items' table
     }
 }
