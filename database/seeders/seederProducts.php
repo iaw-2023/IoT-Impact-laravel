@@ -24,6 +24,8 @@ class seederProducts extends Seeder
                 'stock' => 150,
                 'description' => 'Hamburguesa BigMac con 4 panes.',
                 'product_category_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'id' => 2,
@@ -32,6 +34,8 @@ class seederProducts extends Seeder
                 'stock' => 20,
                 'description' => 'Hamburguesa Cuarto de libra con 2 panes.',
                 'product_category_id' => 1,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'id' => 3,
@@ -40,6 +44,8 @@ class seederProducts extends Seeder
                 'stock' => 300,
                 'description' => 'Pieza de pollo nugget.',
                 'product_category_id' => 2,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'id' => 4,
@@ -48,6 +54,8 @@ class seederProducts extends Seeder
                 'stock' => 10,
                 'description' => 'Vaso de Coca Cola.',
                 'product_category_id' => 3,
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
         ];
 

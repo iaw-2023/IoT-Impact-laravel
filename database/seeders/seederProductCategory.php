@@ -20,14 +20,20 @@ class seederProductCategory extends Seeder
             [
                 'id' => 1,
                 'name' => 'Hamburguesa',
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'id' => 2,
                 'name' => 'Pollo',
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
             [
                 'id' => 3,
                 'name' => 'Bebida',
+                'created_at' => now(),
+                'updated_at' => now(),
             ],
         ];
 
