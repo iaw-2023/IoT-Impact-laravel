@@ -38,6 +38,10 @@ Se podrán obtener y modificar por API las siguientes entidades:
 - Order
 - Items
 
+Además, utilizando algún mecanismo de filtrado, se podrá obtener por API las siguientes entidades:
+- Products
+- Products_Category
+
 
 
 
