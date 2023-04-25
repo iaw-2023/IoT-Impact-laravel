@@ -1,85 +1,75 @@
-## Pasos
+## IDEA DEL PROYECTO
 
-- clonar el repo https://github.com/iaw-2023/laravel-template y mantener como owner la organización de la materia.
-## parados en el directorio del repositorio recientemente clonado, ejecutar:
+Se presenta una aplicación web dedicada al registro de gestión de pedidos de productos de un establecimiento de venta de comida. Los clientes podrán realizar pedidos de comida, y los empleados podrán gestionarlos.
 
-- `composer install`
-- `cp .env.example .env`
-- `php artisan key:generate`
-- `php artisan serve`
-
-Con el último comando, pueden acceder a http://127.0.0.1:8000/ y ver la cáscara de la aplicación Laravel
-
-### Requisitos
-
-- tener [composer](https://getcomposer.org/) instalado
-- tener [php](https://www.php.net/) instalado
+![Diagrama Entidad Relacion](docs/entity-relationship-diagram.png)
 
 
 
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
 
-## About Laravel
+## DETALLES DEL PROYECTO FRAMEWORK PHP - LARAVEL:
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+Se va a registrar, para cada una de las siguientes entidades:
+- Para cada **PRODUCTO**, su nombre, descripción, precio y el stock.
+- Para cada **ORDEN**, el email de la persona que lo hizo, el precio total, y los items que contenga.
+- Para cada **ITEM**, su cantidad.
+- Para cada **CATEGORÍAS DE PRODUCTO**, su nombre.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Cada cliente podrá hacer un pedido al establecimiento de comida, en donde se va a generar una orden con los items que la persona haya solicitado, la cual va a consistir de uno o mas productos.
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
+### ENTIDADES ACTUALIZABLES
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Se podrán actualizar:
+- Products
+- Products_Category
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### REPORTES
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Se pueden generar los siguientes **reportes** :
+- Un reporte que contenga todos los pedidos que haya hecho un cliente.
+- Un reporte con la cantidad de pedidos y dinero ganado por mes.
+- Un reporte que detalle el stock restante de cada producto.
 
-## Laravel Sponsors
+### OBTENCIÓN Y MODIFICACIÓN MEDIANTE API
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+Se podrán obtener y modificar por API las siguientes entidades:
+- Order
+- Items
 
-### Premium Partners
+Además, utilizando algún mecanismo de filtrado, se podrá obtener por API las siguientes entidades:
+- Products
+- Products_Category
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
 
-## Contributing
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
 
-## Code of Conduct
+## DETALLES DEL PROYECTO JAVASCRIPT - REACT:
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### INFORMACIÓN OBSERVABLE POR EL USUARIO
 
-## Security Vulnerabilities
+El usuario podrá ver todos los productos disponibles, con su precio y descripción.
+También podrá ver su pedido actual y su historial de pedidos.
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### ACCIONES REALIZABLES POR EL USUARIO
 
-## License
+El usuario podrá armar su pedido agregando productos a su carrito, para luego decidir si cancelar su compra o confirmar su pedido. Luego podrá consultar el mismo o consultar su historial de pedidos.
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+---
+
+
+### Extras:
+
+#### Comandos útiles:
+En la carpeta raíz del proyecto:
+
+``` 
+composer install
+cp .env.example .env
+php artisan key:generate
+php artisan serve
+```
+#### Docker
+En la carpeta [db-setup-docker](db-setup-docker/) se encuentra el archivo [docker-compose.yml](db-setup-docker/docker-compose.yml), el cual levanta PostgreSQL y pgAdmin.
+
