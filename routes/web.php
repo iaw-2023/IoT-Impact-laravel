@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ProductCategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -29,7 +30,14 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/products', [ProductController::class, 'index']);
+Route::middleware(['auth'])->group(function () {
+    Route::get('/categories', [ProductCategoryController::class, 'index']);
+
+
+    Route::get('/products', [ProductController::class, 'index']);
+    
+
+});
 
 
 require __DIR__.'/auth.php';
