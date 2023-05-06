@@ -17,3 +17,12 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
+
+
+Route::group(['middleware' => ['api'],], function ($router) {
+    Route::get('orders', [App\Http\Controllers\OrderController::class, 'index']);
+});
+
+Route::group(['middleware' => ['api'],], function ($router) {
+    Route::get('items', [App\Http\Controllers\ItemController::class, 'index']);
+});
