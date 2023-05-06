@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-        <title> BurgerPlanet - Categorias de productos </title>
+        <title> BurgerPlanet - Ordenes </title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
@@ -24,14 +24,16 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Name</th>
+                    <th>Customer Email</th>
+                    <th>Total amount</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($categories as $category)
+                @foreach($orders as $order)
                 <tr>
-                    <td>{{ $category->id }}</td>
-                    <td>{{ $category->name }}</td>
+                    <td>{{ $order->id }}</td>
+                    <td>{{ $order->customer_email }}</td>
+                    <td>{{ $order->total_amount}}</td>
                 </tr>
                 @endforeach
             </tbody>

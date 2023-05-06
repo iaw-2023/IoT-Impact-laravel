@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductCategoryController;
 use Illuminate\Support\Facades\Route;
 
@@ -31,10 +33,17 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
-    Route::get('/categories', [ProductCategoryController::class, 'index']);
+    Route::get('/categories', [ProductCategoryController::class, 'show']);
+    Route::get('/orders', [OrderController::class, 'show']);
+    Route::get('/items', [ItemController::class, 'show']);
+    Route::get('/products', [ProductController::class, 'show']);
+
+    //Crear y destruir productos
+    Route::get('/products', [ProductController::class, 'show'])->name('products.index');
+    Route::post('/products', [ProductController::class, 'store'])->name('products.store');
+    Route::post('/products/destroy', [ProductController::class, 'destroy'])->name('products.destroy');
 
 
-    Route::get('/products', [ProductController::class, 'index']);
     
 
 });
