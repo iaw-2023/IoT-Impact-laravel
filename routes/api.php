@@ -26,3 +26,11 @@ Route::group(['middleware' => ['api'],], function ($router) {
 Route::group(['middleware' => ['api'],], function ($router) {
     Route::get('items', [App\Http\Controllers\ItemController::class, 'index']);
 });
+
+Route::group(['middleware' => ['api'],], function ($router) {
+    Route::get('categories', [App\Http\Controllers\ProductCategoryController::class, 'index']);
+});
+
+Route::group(['middleware' => ['api'],], function ($router) {
+    Route::get('products', [App\Http\Controllers\ProductController::class, 'index']);
+});

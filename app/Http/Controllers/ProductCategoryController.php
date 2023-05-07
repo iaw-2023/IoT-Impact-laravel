@@ -10,10 +10,8 @@ class ProductCategoryController extends Controller
 {
     public function index()
     {
-
-        //aca dejo lugar para lo de la api
-        //$categories = ProductCategory::all();
-        //return view('categories.index', compact('categories'));
+        $product_category = ProductCategory::all();
+        return response()->json($product_category);
     }
 
     public function show()

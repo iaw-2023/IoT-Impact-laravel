@@ -11,10 +11,8 @@ class ProductController extends Controller
 {
     public function index()
     {
-        //aca dejo lugar para lo de la api
-        //$products = Product::all();
-        //$categories = ProductCategory::all();
-        //return view('products.index', compact('products', 'categories'));
+        $product = Product::all();
+        return response()->json($product);
     }
 
     public function show()
