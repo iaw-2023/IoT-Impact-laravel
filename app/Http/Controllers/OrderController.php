@@ -15,4 +15,10 @@ class OrderController extends Controller
         return response()->json($orders);
     }
 
+    public function show()
+    {
+        $orders = Order::all();
+        return view('orders.index', compact('orders'));
+    }
+
 }

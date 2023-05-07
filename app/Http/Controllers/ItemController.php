@@ -15,4 +15,10 @@ class ItemController extends Controller
         return response()->json($items);
     }
 
+    public function show()
+    {
+        $items = Item::all();
+        return view('items.index', compact('items'));
+    }
+    
 }

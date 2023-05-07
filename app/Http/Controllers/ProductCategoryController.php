@@ -10,6 +10,14 @@ class ProductCategoryController extends Controller
 {
     public function index()
     {
+
+        //aca dejo lugar para lo de la api
+        //$categories = ProductCategory::all();
+        //return view('categories.index', compact('categories'));
+    }
+
+    public function show()
+    {
         $categories = ProductCategory::all();
 
         return view('categories.index', compact('categories'));
@@ -30,7 +38,7 @@ class ProductCategoryController extends Controller
             'name' => $request->name,
         ]);
 
-        return redirect()->route('categories.index')->with('success', 'Category created successfully.');
+        return redirect()->route('categories.index');
     }
 
     public function edit(ProductCategory $category)
@@ -50,10 +58,14 @@ class ProductCategoryController extends Controller
         return redirect()->route('categories.index')->with('success', 'Category updated successfully.');
     }
 
-    public function destroy(ProductCategory $category)
+    public function destroy(Request $request)
     {
+        $validatedData = $request->validate([
+            'product_category_id' => 'required|numeric|min:0',
+        ]);
+        $id = $validatedData['product_category_id'];
+        $category = ProductCategory::findOrFail($id);
         $category->delete();
-
-        return redirect()->route('categories.index')->with('success', 'Category deleted successfully.');
+        return redirect()->route('categories.index');
     }
 }
