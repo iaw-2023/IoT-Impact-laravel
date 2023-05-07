@@ -62,7 +62,7 @@ class ProductController extends Controller
         ]);
 
         $product->update($validatedData);
-
+        
         return redirect()->route('products.show', $product);
     }
 
