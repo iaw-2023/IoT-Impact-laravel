@@ -38,6 +38,72 @@
         </table>
 
 
+    <!-- Boton agregar categoria -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAgregarCategoria">
+    Agregar categoria de producto
+    </button>
+
+    <!-- Modal agregar categoria -->
+    <div class="modal fade" id="modalAgregarCategoria" tabindex="-1" role="dialog" aria-labelledby="modalAgregarCategoriaLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="modalAgregarCategoriaLabel">Agregar categoria de producto</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+        <form method="POST" action="{{ route('categories.store') }}">
+                @csrf
+                <div class="form-group">
+                    <label for="name">Nombre de la categoria nueva</label>
+                    <input type="text" name="name" id="name" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary">Crear categoria de producto</button>
+            </form>
+        </div>
+        </div>
+    </div>
+    </div>
+
+    <!-- Boton eliminar categoria -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalEliminarCategoria">
+    Eliminar categoria de producto
+    </button>
+
+    <!-- Modal eliminar categoria -->
+    <div class="modal fade" id="modalEliminarCategoria" tabindex="-1" role="dialog" aria-labelledby="modalEliminarCategoriaLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="modalEliminarCategoriaLabel">Agregar producto</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+        <form method="POST" action="{{ route('categories.destroy') }}">
+                @csrf
+                <div class="form-group">
+                    <label for="product_category_id">ID del producto a eliminar:</label>
+                    <input type="number" name="product_category_id" id="product_category_id" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary">Eliminar categoria de producto</button>
+            </form>
+        </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 
 

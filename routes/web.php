@@ -43,6 +43,10 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/products', [ProductController::class, 'store'])->name('products.store');
     Route::post('/products/destroy', [ProductController::class, 'destroy'])->name('products.destroy');
 
+     //Crear y destruir categorias
+     Route::get('/categories', [ProductCategoryController::class, 'show'])->name('categories.index');
+     Route::post('/categories', [ProductCategoryController::class, 'store'])->name('categories.store');
+     Route::post('/categories/destroy', [ProductCategoryController::class, 'destroy'])->name('categories.destroy');   
 
     
 

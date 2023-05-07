@@ -66,12 +66,12 @@
         <form method="POST" action="{{ route('products.store') }}">
                 @csrf
                 <div class="form-group">
-                    <label for="name">Name</label>
+                    <label for="name">Nombre</label>
                     <input type="text" name="name" id="name" class="form-control">
                 </div>
 
                 <div class="form-group">
-                    <label for="price">Price</label>
+                    <label for="price">Precio</label>
                     <input type="number" name="price" id="price" class="form-control">
                 </div>
 
@@ -81,12 +81,12 @@
                 </div>
 
                 <div class="form-group">
-                    <label for="description">Description</label>
+                    <label for="description">Descripcion</label>
                     <textarea name="description" id="description" class="form-control"></textarea>
                 </div>
 
                 <div class="form-group">
-                    <label for="product_category_id">Product Category</label>
+                    <label for="product_category_id">Categoria del producto</label>
                     <select name="product_category_id" id="product_category_id" class="form-control">
                         @foreach ($categories as $category)
                             <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -110,7 +110,7 @@
     <div class="modal-dialog" role="document">
         <div class="modal-content">
         <div class="modal-header">
-            <h5 class="modal-title" id="modalEliminarProductoLabel">Agregar producto</h5>
+            <h5 class="modal-title" id="modalEliminarProductoLabel">Eliminar producto</h5>
             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
             </button>
