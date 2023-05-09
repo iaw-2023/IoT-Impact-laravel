@@ -33,6 +33,7 @@ Route::middleware('auth')->group(function () {
 });
 
 Route::middleware(['auth'])->group(function () {
+    //Rutas aca
     Route::get('/categories', [ProductCategoryController::class, 'show']);
     Route::get('/orders', [OrderController::class, 'show']);
     Route::get('/items', [ItemController::class, 'show']);
