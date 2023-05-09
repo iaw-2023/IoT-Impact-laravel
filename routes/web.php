@@ -51,7 +51,6 @@ Route::middleware(['auth'])->group(function () {
      Route::post('/categories/destroy', [ProductCategoryController::class, 'destroy'])->name('categories.destroy'); 
      Route::post('/categories/update', [ProductCategoryController::class, 'update'])->name('categories.update');  
 
-
 });
 
 
