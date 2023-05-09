@@ -15,7 +15,7 @@ class ItemController extends Controller
         return response()->json($items);
     }
 
-    public function show()
+    public function mostrar()
     {
         $items = Item::all();
         return view('items.index', compact('items'));

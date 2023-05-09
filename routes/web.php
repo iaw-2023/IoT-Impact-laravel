@@ -34,19 +34,19 @@ Route::middleware('auth')->group(function () {
 
 Route::middleware(['auth'])->group(function () {
     //Rutas aca
-    Route::get('/categories', [ProductCategoryController::class, 'show']);
-    Route::get('/orders', [OrderController::class, 'show']);
-    Route::get('/items', [ItemController::class, 'show']);
-    Route::get('/products', [ProductController::class, 'show']);
+    Route::get('/categories', [ProductCategoryController::class, 'mostrar']);
+    Route::get('/orders', [OrderController::class, 'mostrar']);
+    Route::get('/items', [ItemController::class, 'mostrar']);
+    Route::get('/products', [ProductController::class, 'mostrar']);
 
     //Crear, destruir y modificar productos
-    Route::get('/products', [ProductController::class, 'show'])->name('products.index');
+    Route::get('/products', [ProductController::class, 'mostrar'])->name('products.index');
     Route::post('/products', [ProductController::class, 'store'])->name('products.store');
     Route::post('/products/destroy', [ProductController::class, 'destroy'])->name('products.destroy');
     Route::post('/products/update', [ProductController::class, 'update'])->name('products.update');
 
      //Crear y destruir categorias
-     Route::get('/categories', [ProductCategoryController::class, 'show'])->name('categories.index');
+     Route::get('/categories', [ProductCategoryController::class, 'mostrar'])->name('categories.index');
      Route::post('/categories', [ProductCategoryController::class, 'store'])->name('categories.store');
      Route::post('/categories/destroy', [ProductCategoryController::class, 'destroy'])->name('categories.destroy'); 
      Route::post('/categories/update', [ProductCategoryController::class, 'update'])->name('categories.update');  

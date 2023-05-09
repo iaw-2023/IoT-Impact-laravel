@@ -15,7 +15,7 @@ class OrderController extends Controller
         return response()->json($orders);
     }
 
-    public function show()
+    public function mostrar()
     {
         $orders = Order::all();
         return view('orders.index', compact('orders'));
