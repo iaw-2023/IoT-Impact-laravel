@@ -49,9 +49,10 @@ class ProductController extends Controller
         return view('products.edit', compact('product'));
     }
 
-    public function update(Request $request, Product $product)
+    public function update(Request $request)
     {
         $validatedData = $request->validate([
+            'product_id' => 'required|integer|min:0',
             'name' => 'required',
             'price' => 'required|numeric|min:0',
             'stock' => 'required|integer|min:0',
@@ -59,9 +60,11 @@ class ProductController extends Controller
             'product_category_id' => 'required|exists:product_category,id',
         ]);
 
+        $id = $validatedData['product_id'];
+        $product = Product::findOrFail($id);
         $product->update($validatedData);
         
-        return redirect()->route('products.show', $product);
+        return redirect()->route('products.index');
     }
 
     public function destroy(Request $request)

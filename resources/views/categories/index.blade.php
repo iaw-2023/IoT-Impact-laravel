@@ -96,6 +96,39 @@
     </div>
     </div>
 
+    <!-- Boton modificar categoria -->
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalModificarCategoria">
+    Modificar categoria de producto
+    </button>
+
+    <!-- Modal modificar categoria -->
+    <div class="modal fade" id="modalModificarCategoria" tabindex="-1" role="dialog" aria-labelledby="modalModificarCategoriaLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="modalModficiarCategoriaLabel">Modificar categoria de producto</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+        <form method="POST" action="{{ route('categories.update') }}">
+                @csrf
+                <div class="form-group">
+                    <label for="name">ID de la categoria a modificar</label>
+                    <input type="number" name="category_id" id="category_id" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Nombre de la categoria nueva</label>
+                    <input type="text" name="name" id="name" class="form-control">
+                </div>
+                <button type="submit" class="btn btn-primary">Modificar categoria de producto</button>
+            </form>
+        </div>
+        </div>
+    </div>
+    </div>
 
 
 

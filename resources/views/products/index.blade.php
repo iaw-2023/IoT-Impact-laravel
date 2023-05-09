@@ -129,7 +129,63 @@
     </div>
     </div>
 
+<!-- Boton modificar producto -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalModificarProducto">
+    Modificar producto
+    </button>
 
+    <!-- Modal modificar producto -->
+    <div class="modal fade" id="modalModificarProducto" tabindex="-1" role="dialog" aria-labelledby="modalModificarProductoLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+        <div class="modal-header">
+            <h5 class="modal-title" id="modalModificarProductoLabel">Modificar producto</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+        <div class="modal-body">
+        <form method="POST" action="{{ route('products.update') }}">
+                @csrf
+                <div class="form-group">
+                    <label for="name">ID del producto a modificar</label>
+                    <input type="number" name="product_id" id="product_id" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="name">Nombre nuevo</label>
+                    <input type="text" name="name" id="name" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="price">Precio nuevo</label>
+                    <input type="number" name="price" id="price" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="stock">Stock nuevo</label>
+                    <input type="number" name="stock" id="stock" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="description">Descripcion nueva</label>
+                    <textarea name="description" id="description" class="form-control"></textarea>
+                </div>
+
+                <div class="form-group">
+                    <label for="product_category_id">Categoria del producto nueva</label>
+                    <select name="product_category_id" id="product_category_id" class="form-control">
+                        @foreach ($categories as $category)
+                            <option value="{{ $category->id }}">{{ $category->name }}</option>
+                        @endforeach
+                    </select>
+                </div>
+                <button type="submit" class="btn btn-primary">Modificar producto</button>
+            </form>
+        </div>
+        </div>
+    </div>
+    </div>
 
 
 

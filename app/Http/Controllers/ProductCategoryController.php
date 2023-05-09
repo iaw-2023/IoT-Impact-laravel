@@ -44,16 +44,18 @@ class ProductCategoryController extends Controller
         return view('categories.edit', compact('category'));
     }
 
-    public function update(Request $request, ProductCategory $category)
+    public function update(Request $request)
     {
-        $request->validate([
-            'name' => 'required|unique:product_category,name,'.$category->id.'|max:255',
+        $validatedData = $request->validate([
+            'category_id' => 'required|integer|min:0',
+            'name' => 'required',
         ]);
 
-        $category->name = $request->name;
-        $category->save();
-
-        return redirect()->route('categories.index')->with('success', 'Category updated successfully.');
+        $id = $validatedData['category_id'];
+        $category = ProductCategory::findOrFail($id);
+        $category->update($validatedData);
+        
+        return redirect()->route('categories.index');
     }
 
     public function destroy(Request $request)
