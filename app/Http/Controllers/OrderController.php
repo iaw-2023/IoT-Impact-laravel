@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Order;
+use App\Models\Item;
 
 
 class OrderController extends Controller
@@ -33,18 +34,18 @@ class OrderController extends Controller
         $order->customer_email = $request->input('customer_email');
         $order->total_amount = $request->input('total_amount');
         $order->save();
-
-        // Create order items
+    
+        // Creo los items de la orden
         $items = $request->input('items');
-        foreach ($items as $item) {
-            $orderItem = new OrderItem();
-            $orderItem->order_id = $order->id;
-            $orderItem->product_id = $item['product_id'];
-            $orderItem->quantity = $item['quantity'];
-            $orderItem->price = $item['price'];
-            $orderItem->save();
+        foreach ($items as $itemData) {
+            $item = new Item();
+            $item->order_id = $order->id;
+            $item->product_id = $itemData['product_id'];
+            $item->quantity = $itemData['quantity'];
+            $item->individual_price = $itemData['individual_price'];
+            $item->save();
         }
-
+    
         return response()->json(['message' => 'Order created successfully'], 201);
     }
 
