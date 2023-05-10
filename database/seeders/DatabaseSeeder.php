@@ -5,7 +5,7 @@ namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\DB; // permite llamar a DB para solucionar el SETVAL
 
 
 class DatabaseSeeder extends Seeder
@@ -20,12 +20,11 @@ class DatabaseSeeder extends Seeder
         $this->call(seederProducts::class); // Include the seeder class for the 'items' table
         $this->call(seederOrders::class); // Include the seeder class for the 'items' table
         $this->call(seederItems::class); // Include the seeder class for the 'items' table
-/*
-        DB::select("SELECT setval(pg_get_serial_sequence('orders', 'id'), coalesce(max(id)+1, 1), false) FROM orders;");
-        DB::select("SELECT setval(pg_get_serial_sequence('products', 'id'), coalesce(max(id)+1, 1), false) FROM products;");
-        DB::select("SELECT setval(pg_get_serial_sequence('items', 'id'), coalesce(max(id)+1, 1), false) FROM items;");
-        DB::select("SELECT setval(pg_get_serial_sequence('product_category', 'id'), coalesce(max(id)+1, 1), false) FROM product_category;");
-*/
+
+
+        /**
+         * Start fix SETVAL problem
+         */
         $tables = \DB::select('SELECT table_name 
                                 FROM information_schema.tables 
                                 WHERE table_schema = \'public\' 
@@ -40,5 +39,9 @@ class DatabaseSeeder extends Seeder
                 \DB::select('ALTER SEQUENCE ' . $table->table_name . '_id_seq RESTART WITH ' . $seq);
             }
         }
+        /**
+         * End fix SETVAL problem
+         */
+        
     }
 }
