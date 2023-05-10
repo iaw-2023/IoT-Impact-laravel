@@ -17,10 +17,17 @@
 
 body {
     background-color: #151230;
-    background-image: url("/images/logoCompleto.png");
     background-repeat: no-repeat;
     background-size: 400px;
     background-position: center+600px;
+}
+
+.bodyHomepage {
+    background-color: #151230;
+    background-image: url("/images/logoCompleto.png");
+    background-repeat: no-repeat;
+    background-size: 900px;
+    background-position: center+300px;
 }
 
 .table {

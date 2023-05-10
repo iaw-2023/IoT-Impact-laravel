@@ -8,7 +8,7 @@
         <link rel="stylesheet" href="css/estilo.css">
         
     </head>
-    <body class="antialiased">
+    <body class="bodyHomepage">
         
         <!--Paneles de navegacion de las 4 entidades -->
         <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
