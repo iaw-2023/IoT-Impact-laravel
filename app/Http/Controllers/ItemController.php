@@ -15,6 +15,12 @@ class ItemController extends Controller
         return response()->json($items);
     }
 
+    public function show($id)
+    {
+        $item = Item::findOrFail($id);
+        return response()->json($item);
+    }
+
     public function mostrar()
     {
         $items = Item::all();

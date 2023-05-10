@@ -15,13 +15,19 @@ class OrderController extends Controller
         return response()->json($orders);
     }
 
+    public function show($id)
+    {
+        $order = Order::findOrFail($id);
+        return response()->json($order);
+    }
+
     public function mostrar()
     {
         $orders = Order::all();
         return view('orders.index', compact('orders'));
     }
 
-    public function store(Request $request)
+    public function storeAPI(Request $request)
     {
         $order = new Order();
         $order->customer_email = $request->input('customer_email');

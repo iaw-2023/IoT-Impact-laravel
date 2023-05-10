@@ -68,4 +68,10 @@ class ProductCategoryController extends Controller
         $category->delete();
         return redirect()->route('categories.index');
     }
+
+    public function show($id)
+    {
+        $product_category = ProductCategory::findOrFail($id);
+        return response()->json($product_category);
+    }
 }
