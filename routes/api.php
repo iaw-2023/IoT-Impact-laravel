@@ -22,6 +22,7 @@ Route::group(['middleware' => ['api']], function ($router) {
 
     Route::get('orders', [App\Http\Controllers\OrderController::class, 'index']);
     Route::get('orders/{id}', [App\Http\Controllers\OrderController::class, 'show']);
+    Route::post('orders', [App\Http\Controllers\OrderController::class, 'storeAPI']);
 
     Route::get('items', [App\Http\Controllers\ItemController::class, 'index']);
     Route::get('items/{id}', [App\Http\Controllers\ItemController::class, 'show']);
