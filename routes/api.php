@@ -18,19 +18,17 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::group(['middleware' => ['api']], function ($router) {
 
-Route::group(['middleware' => ['api'],], function ($router) {
     Route::get('orders', [App\Http\Controllers\OrderController::class, 'index']);
-});
+    Route::get('orders/{id}', [App\Http\Controllers\OrderController::class, 'show']);
 
-Route::group(['middleware' => ['api'],], function ($router) {
     Route::get('items', [App\Http\Controllers\ItemController::class, 'index']);
-});
+    Route::get('items/{id}', [App\Http\Controllers\ItemController::class, 'show']);
 
-Route::group(['middleware' => ['api'],], function ($router) {
     Route::get('categories', [App\Http\Controllers\ProductCategoryController::class, 'index']);
-});
+    Route::get('categories/{id}', [App\Http\Controllers\ProductCategoryController::class, 'show']);
 
-Route::group(['middleware' => ['api'],], function ($router) {
     Route::get('products', [App\Http\Controllers\ProductController::class, 'index']);
+    Route::get('products/{id}', [App\Http\Controllers\ProductController::class, 'show']);
 });

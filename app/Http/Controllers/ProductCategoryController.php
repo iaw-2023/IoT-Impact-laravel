@@ -14,6 +14,12 @@ class ProductCategoryController extends Controller
         return response()->json($product_category);
     }
 
+    public function show($id)
+    {
+        $product_category = ProductCategory::findOrFail($id);
+        return response()->json($product_category);
+    }
+
     public function mostrar()
     {
         $categories = ProductCategory::all();
