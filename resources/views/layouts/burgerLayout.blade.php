@@ -1,0 +1,49 @@
+<!doctype html>
+
+<style>
+    .navbar {
+        width: 100%;
+    }
+    .navbar-logo {
+        width: 50;
+        height: 50;
+        max-height: 40px;
+        color: white;
+    }
+
+    .containerLogin {
+        display: flex;
+        justify-content: center; /* Centers the child element horizontally */
+        align-items: center; /* Centers the child element vertically */
+        height: 50vh; /* Sets the height of the container to the full height of the viewport */
+    }
+    
+    .textoLogin {
+        text-decoration: none;
+        font-family: Arial, sans-serif;
+        font-size: 24px;
+        margin-top: 20px; /* Adds  pixels of space above the element */
+        margin-right: 20px; /* Adds  pixels of space to the right of the element */
+        margin-bottom: 30px; /* Adds  pixels of space below the element */
+        margin-left: 20px; /* Adds  pixels of space to the left of the element */
+    }
+
+    body {
+        background-color: #151230;
+        background-repeat: no-repeat;
+        background-size: 400px;
+        background-position: center+600px;
+    }
+
+    .bodyHomepage {
+        background-color: #151230;
+        background-image: url("/images/logoCompleto.png");
+        background-repeat: no-repeat;
+        background-size: 900px;
+        background-position: center+30px;
+    }
+
+    .table {
+        color: white;
+    }
+</style>
