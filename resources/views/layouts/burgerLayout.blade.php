@@ -37,7 +37,7 @@
 
     .bodyHomepage {
         background-color: #151230;
-        background-image: url("/images/logoCompleto.png");
+        background-image: url("https://i.ibb.co/rv7D8jX/logo.png");
         background-repeat: no-repeat;
         background-size: 900px;
         background-position: center+30px;
