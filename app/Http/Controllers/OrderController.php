@@ -78,7 +78,7 @@ class OrderController extends Controller
      *         description="Datos de la orden",
      *         @OA\JsonContent(
      *             required={"customer_email","total_amount","items"},
-     *             @OA\Property(property="customer_email",type="string",example="2023-05-23"),
+     *             @OA\Property(property="customer_email",type="string",example="juan@gmail.com"),
      *             @OA\Property(property="total_amount",type="float",example=4567),
      *             @OA\Property(
      *                 property="items",
