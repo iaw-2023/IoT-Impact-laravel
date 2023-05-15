@@ -1,6 +1,10 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\ProductController;
+use App\Http\Controllers\ItemController;
+use App\Http\Controllers\OrderController;
+use App\Http\Controllers\ProductCategoryController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,5 +31,26 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::middleware(['auth'])->group(function () {
+    //Rutas aca
+    Route::get('/categories', [ProductCategoryController::class, 'mostrar']);
+    Route::get('/orders', [OrderController::class, 'mostrar']);
+    Route::get('/items', [ItemController::class, 'mostrar']);
+    Route::get('/products', [ProductController::class, 'mostrar']);
+
+    //Crear, destruir y modificar productos
+    Route::get('/products', [ProductController::class, 'mostrar'])->name('products.index');
+    Route::post('/products', [ProductController::class, 'store'])->name('products.store');
+    Route::post('/products/destroy', [ProductController::class, 'destroy'])->name('products.destroy');
+    Route::post('/products/update', [ProductController::class, 'update'])->name('products.update');
+
+     //Crear y destruir categorias
+    Route::get('/categories', [ProductCategoryController::class, 'mostrar'])->name('categories.index');
+    Route::post('/categories', [ProductCategoryController::class, 'store'])->name('categories.store');
+    Route::post('/categories/destroy', [ProductCategoryController::class, 'destroy'])->name('categories.destroy'); 
+    Route::post('/categories/update', [ProductCategoryController::class, 'update'])->name('categories.update');  
+});
+
 
 require __DIR__.'/auth.php';
