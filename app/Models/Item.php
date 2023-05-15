@@ -13,8 +13,6 @@ use Illuminate\Database\Eloquent\Model;
  *     @OA\Property(property="individual_price", type="number", format="float", example=12.34),
  *     @OA\Property(property="order_id", type="integer", example=1),
  *     @OA\Property(property="product_id", type="integer", example=1),
- *     @OA\Property(property="created_at", type="string", format="date-time", example="2023-05-14 13:42:21"),
- *     @OA\Property(property="updated_at", type="string", format="date-time", example="2023-05-14 13:42:21"),
  * )
  */
 class Item extends Model
