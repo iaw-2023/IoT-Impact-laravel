@@ -5,13 +5,13 @@
         "version": "1.0"
     },
     "paths": {
-        "rest/items": {
+        "/rest/items": {
             "get": {
                 "tags": [
                     "Items"
                 ],
                 "summary": "Obtener todos los items",
-                "operationId": "3b53245b7df3a26823bc85185ba59d90",
+                "operationId": "3a43f915d39f44a089f3d3c06613e4f5",
                 "responses": {
                     "200": {
                         "description": "Lista de items"
@@ -90,7 +90,7 @@
                                 "properties": {
                                     "customer_email": {
                                         "type": "string",
-                                        "example": "2023-05-23"
+                                        "example": "juan@gmail.com"
                                     },
                                     "total_amount": {
                                         "type": "number",
@@ -190,13 +190,13 @@
                 }
             }
         },
-        "/rest//categories/{id}": {
+        "/rest/categories/{id}": {
             "get": {
                 "tags": [
                     "Product Categories"
                 ],
                 "summary": "Obtener una categoría de producto por ID",
-                "operationId": "6cf9310d6a1ad773ff968ec76eb018f8",
+                "operationId": "afe6404e395bf3e2698482afd66e9a39",
                 "parameters": [
                     {
                         "name": "id",
