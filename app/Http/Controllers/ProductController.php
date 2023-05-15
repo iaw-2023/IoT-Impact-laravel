@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Http\Controllers;
+namespace App\Http\Controllers;
 
 use App\Models\Product;
 use App\Models\ProductCategory;
@@ -9,6 +9,19 @@ use Illuminate\Routing\Controller as BaseController;
 
 class ProductController extends Controller
 {
+
+    /**
+     * @OA\Get(
+     *     path="/rest/products",
+     *     summary="Obtener todos los productos",
+     *     tags={"Products"},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Lista de productos",
+     *         @OA\JsonContent(ref="#/components/schemas/Product")
+     *     )
+     * )
+     */
     public function index()
     {
         $product = Product::all();
@@ -27,7 +40,6 @@ class ProductController extends Controller
         $categories = ProductCategory::all();
         return view('products.create', compact('categories'));
     }
-
 
     public function store(Request $request)
     {
@@ -48,7 +60,7 @@ class ProductController extends Controller
     {
         return view('products.edit', compact('product'));
     }
-
+    
     public function update(Request $request)
     {
         $validatedData = $request->validate([
@@ -78,6 +90,32 @@ class ProductController extends Controller
         return redirect()->route('products.index');
     }
 
+    /**
+     * @OA\Get(
+     *     path="/rest/products/{id}",
+     *     summary="Obtener un producto por ID",
+     *     tags={"Products"},
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         description="ID del producto",
+     *         required=true,
+     *         @OA\Schema(
+     *             type="integer",
+     *             format="int64"
+     *         )
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Producto encontrado",
+     *         @OA\JsonContent(ref="#/components/schemas/Product")
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="Producto no encontrado"
+     *     )
+     * )
+     */
     public function show($id)
     {
         $product = Product::findOrFail($id);

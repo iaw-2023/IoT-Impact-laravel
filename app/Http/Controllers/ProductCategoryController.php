@@ -1,6 +1,6 @@
 <?php
 
-namespace app\Http\Controllers;
+namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\ProductCategory;
@@ -8,6 +8,22 @@ use Illuminate\Routing\Controller as BaseController;
 
 class ProductCategoryController extends Controller
 {
+
+    /**
+     * @OA\Get(
+     *     path="/categories",
+     *     summary="Obtener todas las categorías de productos",
+     *     tags={"Product Categories"},
+     *     @OA\Response(
+     *         response=200,
+     *         description="Lista de categorías de productos",
+     *         @OA\JsonContent(
+     *             type="array",
+     *             @OA\Items(ref="#/components/schemas/ProductCategory")
+     *         )
+     *     )
+     * )
+     */
     public function index()
     {
         $product_category = ProductCategory::all();
@@ -69,6 +85,30 @@ class ProductCategoryController extends Controller
         return redirect()->route('categories.index');
     }
 
+
+    /**
+     * @OA\Get(
+     *     path="/categories/{id}",
+     *     summary="Obtener una categoría de producto por ID",
+     *     tags={"Product Categories"},
+     *     @OA\Parameter(
+     *         name="id",
+     *         in="path",
+     *         description="ID de la categoría de producto",
+     *         required=true,
+     *         @OA\Schema(type="integer")
+     *     ),
+     *     @OA\Response(
+     *         response=200,
+     *         description="Categoría de producto encontrada",
+     *         @OA\JsonContent(ref="#/components/schemas/ProductCategory")
+     *     ),
+     *     @OA\Response(
+     *         response=404,
+     *         description="Categoría de producto no encontrada"
+     *     )
+     * )
+     */
     public function show($id)
     {
         $product_category = ProductCategory::findOrFail($id);
