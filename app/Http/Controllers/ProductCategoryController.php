@@ -88,7 +88,7 @@ class ProductCategoryController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/rest//categories/{id}",
+     *     path="/rest/categories/{id}",
      *     summary="Obtener una categoría de producto por ID",
      *     tags={"Product Categories"},
      *     @OA\Parameter(
