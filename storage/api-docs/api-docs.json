@@ -82,7 +82,44 @@
                     "content": {
                         "application/json": {
                             "schema": {
-                                "$ref": "#/components/schemas/Order"
+                                "required": [
+                                    "customer_email",
+                                    "total_amount",
+                                    "items"
+                                ],
+                                "properties": {
+                                    "customer_email": {
+                                        "type": "string",
+                                        "example": "2023-05-23"
+                                    },
+                                    "total_amount": {
+                                        "type": "number",
+                                        "format": "float",
+                                        "example": 4567
+                                    },
+                                    "items": {
+                                        "type": "array",
+                                        "items": {
+                                            "properties": {
+                                                "product_id": {
+                                                    "type": "integer",
+                                                    "example": 1
+                                                },
+                                                "quantity": {
+                                                    "type": "number",
+                                                    "example": 2
+                                                },
+                                                "individual_price": {
+                                                    "type": "number",
+                                                    "format": "float",
+                                                    "example": 920
+                                                }
+                                            },
+                                            "type": "object"
+                                        }
+                                    }
+                                },
+                                "type": "object"
                             }
                         }
                     }
@@ -270,16 +307,6 @@
                     "product_id": {
                         "type": "integer",
                         "example": 1
-                    },
-                    "created_at": {
-                        "type": "string",
-                        "format": "date-time",
-                        "example": "2023-05-14 13:42:21"
-                    },
-                    "updated_at": {
-                        "type": "string",
-                        "format": "date-time",
-                        "example": "2023-05-14 13:42:21"
                     }
                 },
                 "type": "object"
@@ -292,22 +319,12 @@
                     },
                     "customer_email": {
                         "type": "string",
-                        "example": "example@example.com"
+                        "example": "carlos@gmail.com"
                     },
                     "total_amount": {
                         "type": "number",
                         "format": "float",
                         "example": 123.45
-                    },
-                    "created_at": {
-                        "type": "string",
-                        "format": "date-time",
-                        "example": "2023-05-14 13:42:21"
-                    },
-                    "updated_at": {
-                        "type": "string",
-                        "format": "date-time",
-                        "example": "2023-05-14 13:42:21"
                     },
                     "items": {
                         "type": "array",

@@ -76,7 +76,27 @@ class OrderController extends Controller
      *     @OA\RequestBody(
      *         required=true,
      *         description="Datos de la orden",
-     *         @OA\JsonContent(ref="#/components/schemas/Order")
+     *         @OA\JsonContent(
+     *             required={"customer_email","total_amount","items"},
+     *             @OA\Property(property="customer_email",type="string",example="2023-05-23"),
+     *             @OA\Property(property="total_amount",type="float",example=4567),
+     *             @OA\Property(
+     *                 property="items",
+     *                 type="array",
+     *                 @OA\Items(
+     *                     type="object",
+     *                     @OA\Property(property="product_id",type="integer",example=1),
+     *                     @OA\Property(property="quantity",type="number",example=2),
+     *                     @OA\Property(property="individual_price",type="float",example=920.0),
+     *                 ),
+     *                 @OA\Items(
+     *                     type="object",
+     *                     @OA\Property(property="product_id",type="integer",example=2),
+     *                     @OA\Property(property="quantity",type="number",example=1),
+     *                     @OA\Property(property="individual_price",type="float",example=948.0),
+     *                 )
+     *             )
+     *         )
      *     ),
      *     @OA\Response(
      *         response=201,
@@ -90,7 +110,7 @@ class OrderController extends Controller
         $order->customer_email = $request->input('customer_email');
         $order->total_amount = $request->input('total_amount');
         $order->save();
-    
+
         // Creo los items de la orden
         $items = $request->input('items');
         foreach ($items as $itemData) {
@@ -101,8 +121,9 @@ class OrderController extends Controller
             $item->individual_price = $itemData['individual_price'];
             $item->save();
         }
-    
+
         return response()->json(['message' => 'Order created successfully'], 201);
     }
+
 
 }
