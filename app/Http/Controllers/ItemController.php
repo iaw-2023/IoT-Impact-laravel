@@ -11,7 +11,7 @@ class ItemController extends Controller
 
     /**
      * @OA\Get(
-     *     path="rest/items",
+     *     path="/rest/items",
      *     summary="Obtener todos los items",
      *     tags={"Items"},
      *     @OA\Response(
