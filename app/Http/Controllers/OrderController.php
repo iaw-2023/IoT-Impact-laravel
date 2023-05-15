@@ -12,7 +12,7 @@ class OrderController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/orders",
+     *     path="/rest/orders",
      *     summary="Obtener todas las órdenes",
      *     tags={"Orders"},
      *     @OA\Response(
@@ -33,7 +33,7 @@ class OrderController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/orders/{id}",
+     *     path="/rest/orders/{id}",
      *     summary="Obtener una orden por ID",
      *     tags={"Orders"},
      *     @OA\Parameter(
@@ -70,7 +70,7 @@ class OrderController extends Controller
 
     /**
      * @OA\Post(
-     *     path="/orders",
+     *     path="/rest/orders",
      *     summary="Crear una nueva orden",
      *     tags={"Orders"},
      *     @OA\RequestBody(

@@ -11,10 +11,10 @@ use Illuminate\Database\Eloquent\Model;
  *     type="object",
  *     required={"id", "name", "price", "stock", "description", "product_category_id"},
  *     @OA\Property(property="id", type="integer", example=1),
- *     @OA\Property(property="name", type="string", example="Laptop"),
+ *     @OA\Property(property="name", type="string", example="Fanta"),
  *     @OA\Property(property="price", type="number", format="float", example=999.99),
  *     @OA\Property(property="stock", type="integer", example=10),
- *     @OA\Property(property="description", type="string", example="A high-end laptop for power users"),
+ *     @OA\Property(property="description", type="string", example="Vaso de 300ml de Fanta."),
  *     @OA\Property(property="product_category_id", type="integer", example=1),
  *     @OA\Property(property="category", ref="#/components/schemas/ProductCategory")
  * )

@@ -29,7 +29,7 @@ class ItemController extends Controller
 
     /**
      * @OA\Get(
-     *     path="rest/items/{id}",
+     *     path="/rest/items/{id}",
      *     summary="Obtener un item por ID",
      *     tags={"Items"},
      *     @OA\Parameter(

@@ -5,56 +5,18 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-
-    /**
-     * @OA\Schema(
-     *     schema="Item",
-     *     required={"quantity", "individual_price", "order_id", "product_id"},
-     *     @OA\Property(
-     *         property="id",
-     *         type="integer",
-     *         format="int64"
-     *     ),
-     *     @OA\Property(
-     *         property="quantity",
-     *         type="integer",
-     *         format="int64"
-     *     ),
-     *     @OA\Property(
-     *         property="individual_price",
-     *         type="number",
-     *         format="float"
-     *     ),
-     *     @OA\Property(
-     *         property="order_id",
-     *         type="integer",
-     *         format="int64"
-     *     ),
-     *     @OA\Property(
-     *         property="product_id",
-     *         type="integer",
-     *         format="int64"
-     *     ),
-     *     @OA\Property(
-     *         property="created_at",
-     *         type="string",
-     *         format="date-time"
-     *     ),
-     *     @OA\Property(
-     *         property="updated_at",
-     *         type="string",
-     *         format="date-time"
-     *     ),
-     *     @OA\Property(
-     *         property="order",
-     *         ref="#/components/schemas/Order"
-     *     ),
-     *     @OA\Property(
-     *         property="product",
-     *         ref="#/components/schemas/Product"
-     *     )
-     * )
-     */
+/**
+ * @OA\Schema(
+ *     schema="Item",
+ *     @OA\Property(property="id", type="integer", example=1),
+ *     @OA\Property(property="quantity", type="integer", example=2),
+ *     @OA\Property(property="individual_price", type="number", format="float", example=12.34),
+ *     @OA\Property(property="order_id", type="integer", example=1),
+ *     @OA\Property(property="product_id", type="integer", example=1),
+ *     @OA\Property(property="created_at", type="string", format="date-time", example="2023-05-14 13:42:21"),
+ *     @OA\Property(property="updated_at", type="string", format="date-time", example="2023-05-14 13:42:21"),
+ * )
+ */
 class Item extends Model
 {
     use HasFactory;

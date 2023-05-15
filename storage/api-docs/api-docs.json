@@ -19,13 +19,13 @@
                 }
             }
         },
-        "rest/items/{id}": {
+        "/rest/items/{id}": {
             "get": {
                 "tags": [
                     "Items"
                 ],
                 "summary": "Obtener un item por ID",
-                "operationId": "e333c3cdfaea71c7b12ed58c85237069",
+                "operationId": "cfe276fce050c74554885f0f95226ac3",
                 "parameters": [
                     {
                         "name": "id",
@@ -47,13 +47,13 @@
                 }
             }
         },
-        "/orders": {
+        "/rest/orders": {
             "get": {
                 "tags": [
                     "Orders"
                 ],
                 "summary": "Obtener todas las órdenes",
-                "operationId": "325fd3d55bbe9bb39645269928fa4983",
+                "operationId": "cd37eabfd98b49bc2a3b194ebc2876dd",
                 "responses": {
                     "200": {
                         "description": "Lista de órdenes",
@@ -75,7 +75,7 @@
                     "Orders"
                 ],
                 "summary": "Crear una nueva orden",
-                "operationId": "2f18088ceb7284b59ea6ca0977d07fc5",
+                "operationId": "b86915443e8e30703ba190da72f99821",
                 "requestBody": {
                     "description": "Datos de la orden",
                     "required": true,
@@ -94,13 +94,13 @@
                 }
             }
         },
-        "/orders/{id}": {
+        "/rest/orders/{id}": {
             "get": {
                 "tags": [
                     "Orders"
                 ],
                 "summary": "Obtener una orden por ID",
-                "operationId": "f088d34a2737782215f435f854e31de5",
+                "operationId": "3216e29cff05dbd7b164dac23516ae73",
                 "parameters": [
                     {
                         "name": "id",
@@ -129,13 +129,13 @@
                 }
             }
         },
-        "/categories": {
+        "/rest/categories": {
             "get": {
                 "tags": [
                     "Product Categories"
                 ],
                 "summary": "Obtener todas las categorías de productos",
-                "operationId": "8ab90094a757b7ffb8e1c414334ea0e3",
+                "operationId": "11a4c1f9d8cc195620505d3ded702057",
                 "responses": {
                     "200": {
                         "description": "Lista de categorías de productos",
@@ -153,13 +153,13 @@
                 }
             }
         },
-        "/categories/{id}": {
+        "/rest//categories/{id}": {
             "get": {
                 "tags": [
                     "Product Categories"
                 ],
                 "summary": "Obtener una categoría de producto por ID",
-                "operationId": "46e3fdc7494a4145dc2f8281f7129431",
+                "operationId": "6cf9310d6a1ad773ff968ec76eb018f8",
                 "parameters": [
                     {
                         "name": "id",
@@ -249,46 +249,37 @@
     "components": {
         "schemas": {
             "Item": {
-                "required": [
-                    "quantity",
-                    "individual_price",
-                    "order_id",
-                    "product_id"
-                ],
                 "properties": {
                     "id": {
                         "type": "integer",
-                        "format": "int64"
+                        "example": 1
                     },
                     "quantity": {
                         "type": "integer",
-                        "format": "int64"
+                        "example": 2
                     },
                     "individual_price": {
                         "type": "number",
-                        "format": "float"
+                        "format": "float",
+                        "example": 12.34
                     },
                     "order_id": {
                         "type": "integer",
-                        "format": "int64"
+                        "example": 1
                     },
                     "product_id": {
                         "type": "integer",
-                        "format": "int64"
+                        "example": 1
                     },
                     "created_at": {
                         "type": "string",
-                        "format": "date-time"
+                        "format": "date-time",
+                        "example": "2023-05-14 13:42:21"
                     },
                     "updated_at": {
                         "type": "string",
-                        "format": "date-time"
-                    },
-                    "order": {
-                        "$ref": "#/components/schemas/Order"
-                    },
-                    "product": {
-                        "$ref": "#/components/schemas/Product"
+                        "format": "date-time",
+                        "example": "2023-05-14 13:42:21"
                     }
                 },
                 "type": "object"
@@ -343,7 +334,7 @@
                     },
                     "name": {
                         "type": "string",
-                        "example": "Laptop"
+                        "example": "Fanta"
                     },
                     "price": {
                         "type": "number",
@@ -356,7 +347,7 @@
                     },
                     "description": {
                         "type": "string",
-                        "example": "A high-end laptop for power users"
+                        "example": "Vaso de 300ml de Fanta."
                     },
                     "product_category_id": {
                         "type": "integer",
@@ -380,7 +371,7 @@
                     },
                     "name": {
                         "type": "string",
-                        "example": "Electronics"
+                        "example": "Bebida"
                     }
                 },
                 "type": "object"

@@ -11,7 +11,7 @@ class ProductCategoryController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/categories",
+     *     path="/rest/categories",
      *     summary="Obtener todas las categorías de productos",
      *     tags={"Product Categories"},
      *     @OA\Response(
@@ -88,7 +88,7 @@ class ProductCategoryController extends Controller
 
     /**
      * @OA\Get(
-     *     path="/categories/{id}",
+     *     path="/rest//categories/{id}",
      *     summary="Obtener una categoría de producto por ID",
      *     tags={"Product Categories"},
      *     @OA\Parameter(
