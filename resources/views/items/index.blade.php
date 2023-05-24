@@ -29,7 +29,7 @@
                     <th>ID</th>
                     <th>Order ID</th>
                     <th>Quantity</th>
-                    <th>Product ID</th>
+                    <th>Product</th>
                     <th>Individual Price</th>
                 </tr>
             </thead>
@@ -39,7 +39,7 @@
                     <td>{{ $item->id }}</td>
                     <td>{{ $item->order_id }}</td>
                     <td>{{ $item->quantity }}</td>
-                    <td>{{ $item->product_id }}</td>
+                    <td>{{ $item->product->name }}</td>
                     <td>{{ $item->individual_price }}</td>
                 </tr>
                 @endforeach
