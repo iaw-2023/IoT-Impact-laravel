@@ -25,13 +25,13 @@ class seederProductCategory extends Seeder
             ],
             [
                 'id' => 2,
-                'name' => 'Pollo',
+                'name' => 'Bebida',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
                 'id' => 3,
-                'name' => 'Bebida',
+                'name' => 'Papas',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
