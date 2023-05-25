@@ -26,8 +26,8 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Customer Email</th>
-                    <th>Total amount</th>
+                    <th>Email del cliente</th>
+                    <th>Monto total</th>
                 </tr>
             </thead>
             <tbody>

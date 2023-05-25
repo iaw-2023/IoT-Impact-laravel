@@ -29,11 +29,11 @@
 		<thead>
 			<tr>
 				<th>ID</th>
-				<th>Name</th>
-				<th>Price</th>
+				<th>Nombre</th>
+				<th>Precio</th>
 				<th>Stock</th>
-				<th>Description</th>
-				<th>Category</th>
+				<th>Descripcion</th>
+				<th>Categoria</th>
 			</tr>
 		</thead>
 		<tbody>
@@ -44,7 +44,7 @@
 				<td>{{ $product->price }}</td>
 				<td>{{ $product->stock }}</td>
 				<td>{{ $product->description }}</td>
-				<td>{{ $product->product_category_id }}</td>
+				<td>{{ $product->category->name }}</td>
 				<td>
 
 					<!-- Boton modificar producto -->

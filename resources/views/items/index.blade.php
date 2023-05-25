@@ -26,10 +26,10 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Order ID</th>
-                    <th>Quantity</th>
-                    <th>Product</th>
-                    <th>Individual Price</th>
+                    <th>ID Orden</th>
+                    <th>Cantidad</th>
+                    <th>Producto</th>
+                    <th>Precio individual</th>
                 </tr>
             </thead>
             <tbody>

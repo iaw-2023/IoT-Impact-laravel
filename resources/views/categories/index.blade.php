@@ -27,7 +27,7 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Name</th>
+                <th>Nombre</th>
             </tr>
         </thead>
         <tbody>
