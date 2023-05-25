@@ -14,7 +14,7 @@
         <nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
         <div class="container-fluid">
             <img src="https://i.ibb.co/pdbcDkX/logo-sin-bp.png" alt="Logo" class="navbar-logo">
-            <a class="navbar-brand" href="/">BurgerPlanet</a>
+            <a class="navbar-brand">BurgerPlanet</a>
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item"> <a class="nav-link active" aria-current="page" href="/products">Productos</a> </li>
