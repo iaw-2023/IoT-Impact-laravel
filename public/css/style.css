@@ -1,3 +1,13 @@
+.navbar {
+    width: 100%;
+}
+.navbar-logo {
+    width: 50;
+    height: 50;
+    max-height: 40px;
+    color: white;
+}
+
 .containerLogin {
     display: flex;
     justify-content: center; /* Centers the child element horizontally */
