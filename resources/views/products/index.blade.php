@@ -135,12 +135,15 @@
 										@endforeach
 									</select>
 								</div>
-								<button type="submit" class="btn btn-primary">Modificar producto</button>
+								<div class="form-group mt-3">
+									<button type="submit" class="btn btn-primary">Modificar producto</button>
+								</div>
 							</form>
 						</div>
 					</div>
 				</div>
 			</div>
+
 
 
 
@@ -199,12 +202,15 @@
 								@endforeach
 							</select>
 						</div>
-						<button type="submit" class="btn btn-primary">Crear producto</button>
+						<div class="form-group mt-3">
+							<button type="submit" class="btn btn-primary">Crear producto</button>
+						</div>
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
+
 
 
 
