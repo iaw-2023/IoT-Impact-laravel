@@ -2,11 +2,11 @@
 <html lang="en">
 
 <head>
-        <title> BurgerPlanet - Productos </title>
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
-        <link rel="stylesheet" href="/css/style.css">
+	<title> BurgerPlanet - Productos </title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+	<link rel="stylesheet" href="/css/style.css">
 
 </head>
 
@@ -14,7 +14,7 @@
 
 	<!-- Si hay un error al eliminar un producto-->
 	@if(session('error'))
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+	<div class="alert alert-warning alert-dismissible fade show" role="alert">
 		<strong>Error!</strong> No se puede eliminar este producto ya que tiene asociaciones.
 		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 			<span aria-hidden="true">&times;</span>
@@ -146,6 +146,12 @@
 										@endforeach
 									</select>
 								</div>
+
+								<div class="form-group">
+									<label for="image">Imagen nueva</label>
+									<input type="text" name="image" id="image" class="form-control" value="{{ $product->image }}">
+								</div>
+
 								<div class="form-group mt-3">
 									<button type="submit" class="btn btn-primary">Modificar producto</button>
 								</div>
@@ -213,6 +219,12 @@
 								@endforeach
 							</select>
 						</div>
+
+						<div class="form-group">
+							<label for="image">Imagen</label>
+							<input type="text" name="image" id="image" class="form-control">
+						</div>
+
 						<div class="form-group mt-3">
 							<button type="submit" class="btn btn-primary">Crear producto</button>
 						</div>
