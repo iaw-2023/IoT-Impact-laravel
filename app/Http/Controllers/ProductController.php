@@ -49,6 +49,7 @@ class ProductController extends Controller
             'stock' => 'required|integer|min:0',
             'description' => 'required',
             'product_category_id' => 'required|exists:product_category,id',
+            'image' => 'required',
         ]);
 
 
@@ -70,6 +71,7 @@ class ProductController extends Controller
             'stock' => 'required|integer|min:0',
             'description' => 'required',
             'product_category_id' => 'required|exists:product_category,id',
+            'image' => 'required',
         ]);
 
         $id = $validatedData['product_id'];
