@@ -24,14 +24,14 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $product = Product::all();
+        $product = Product::orderBy('id')->get();
         return response()->json($product);
     }
 
     public function mostrar()
     {
-        $products = Product::all();
-        $categories = ProductCategory::all();
+        $products = Product::orderBy('id')->get();
+        $categories = ProductCategory::orderBy('id')->get();
         return view('products.index', compact('products', 'categories'));
     }
 

@@ -32,7 +32,7 @@ class ProductCategoryController extends Controller
 
     public function mostrar()
     {
-        $categories = ProductCategory::all();
+        $categories = ProductCategory::orderBy('id')->get();
 
         return view('categories.index', compact('categories'));
     }
