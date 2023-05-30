@@ -13,10 +13,7 @@
     "routes": [
         { 
             "src": "/public/css/(.*)", 
-            "headers": {
-                "cache-control": "public, max-age=31536000, inmutable"
-            },
-            "dest": "/public/css/$1" 
+            "dest": "/public/css/.*" 
         },
         {
             "src": "/build/(.*)",
