@@ -76,13 +76,20 @@ class ProductCategoryController extends Controller
 
     public function destroy(Request $request)
     {
-        $validatedData = $request->validate([
-            'product_category_id' => 'required|numeric|min:0',
-        ]);
-        $id = $validatedData['product_category_id'];
-        $category = ProductCategory::findOrFail($id);
-        $category->delete();
-        return redirect()->route('categories.index');
+
+
+        try {
+            $validatedData = $request->validate([
+                'product_category_id' => 'required|numeric|min:0',
+            ]);
+            $id = $validatedData['product_category_id'];
+            $category = ProductCategory::findOrFail($id);
+            $category->delete();
+            return redirect()->route('categories.index');
+        } catch (\Illuminate\Database\QueryException $e) {
+            $errorMessage = "No se puede borrar la categoria porque tiene asociaciones.";
+            return redirect()->back()->with('error', $errorMessage);
+        }
     }
 
 

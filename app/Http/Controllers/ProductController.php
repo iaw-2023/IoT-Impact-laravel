@@ -84,11 +84,18 @@ class ProductController extends Controller
         $validatedData = $request->validate([
             'product_id' => 'required|numeric|min:0',
         ]);
-        $id = $validatedData['product_id'];
-        $product = Product::findOrFail($id);
-        $product->delete();
-        return redirect()->route('products.index');
+    
+        try {
+            $id = $validatedData['product_id'];
+            $product = Product::findOrFail($id);
+            $product->delete();
+            return redirect()->route('products.index');
+        } catch (\Illuminate\Database\QueryException $e) {
+            $errorMessage = "No se puede borrar el producto porque tiene asociaciones.";
+            return redirect()->back()->with('error', $errorMessage);
+        }
     }
+    
 
     /**
      * @OA\Get(

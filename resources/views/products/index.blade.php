@@ -12,6 +12,16 @@
 
 <body>
 
+	<!-- Si hay un error al eliminar un producto-->
+	@if(session('error'))
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+		<strong>Error!</strong> No se puede eliminar este producto ya que tiene asociaciones.
+		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+			<span aria-hidden="true">&times;</span>
+		</button>
+	</div>
+	@endif
+
 	<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
 		<div class="container-fluid">
 			<img src="https://i.ibb.co/pdbcDkX/logo-sin-bp.png" alt="Logo" class="navbar-logo">
