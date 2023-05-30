@@ -13,7 +13,7 @@
     "routes": [
         { 
             "src": "/public/css/(.*)", 
-            "dest": "/public/css/$1" 
+            "dest": "/public/css/$1"  
         },
         {
             "src": "/build/(.*)",
