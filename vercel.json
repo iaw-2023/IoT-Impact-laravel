@@ -5,6 +5,11 @@
             "runtime": "vercel-php@0.6.0" 
         }
     },
+
+    "builds": [
+        { "src": "/public/css/**", "use": "@now/static" },
+        { "src": "/api/index.php", "use": "vercel-php@0.6.0" }
+    ],
     "routes": [
         { 
             "src": "/public/css/(.*)", 
