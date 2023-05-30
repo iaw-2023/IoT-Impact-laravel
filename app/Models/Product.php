@@ -29,6 +29,7 @@ class Product extends Model
         'stock',
         'description',
         'product_category_id',
+        'image',
     ];
 
     public function category()
