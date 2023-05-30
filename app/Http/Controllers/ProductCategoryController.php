@@ -87,7 +87,7 @@ class ProductCategoryController extends Controller
             $category->delete();
             return redirect()->route('categories.index');
         } catch (\Illuminate\Database\QueryException $e) {
-            $errorMessage = "No se puede borrar la categoria porque tiene asociaciones.";
+            $errorMessage = "No se puede borrar la categoria porque tiene productos asociados.";
             return redirect()->back()->with('error', $errorMessage);
         }
     }

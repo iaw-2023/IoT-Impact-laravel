@@ -15,7 +15,7 @@
 	<!-- Si hay un error al eliminar un producto-->
 	@if(session('error'))
 	<div class="alert alert-warning alert-dismissible fade show" role="alert">
-		<strong>Error!</strong> No se puede eliminar este producto ya que tiene asociaciones.
+		<strong>Error!</strong> No se puede eliminar este producto ya que tiene pedidos asociados.
 		<button type="button" class="close" data-dismiss="alert" aria-label="Close">
 			<span aria-hidden="true">&times;</span>
 		</button>

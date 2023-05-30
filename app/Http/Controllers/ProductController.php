@@ -93,7 +93,7 @@ class ProductController extends Controller
             $product->delete();
             return redirect()->route('products.index');
         } catch (\Illuminate\Database\QueryException $e) {
-            $errorMessage = "No se puede borrar el producto porque tiene asociaciones.";
+            $errorMessage = "No se puede borrar el producto porque tiene pedidos asociados";
             return redirect()->back()->with('error', $errorMessage);
         }
     }
