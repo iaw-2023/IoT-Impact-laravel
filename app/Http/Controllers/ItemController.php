@@ -52,9 +52,15 @@ class ItemController extends Controller
      */
     public function show($id)
     {
-        $item = Item::findOrFail($id);
+        $item = Item::find($id);
+
+        if (!$item) {
+            return response()->json(['message' => 'Item no encontrado'], 404);
+        }
+        
         return response()->json($item);
     }
+
 
     public function mostrar()
     {

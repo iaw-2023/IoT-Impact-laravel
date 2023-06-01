@@ -210,7 +210,7 @@
                 ],
                 "responses": {
                     "200": {
-                        "description": "Categoría de producto encontrada",
+                        "description": "Categoría encontrada",
                         "content": {
                             "application/json": {
                                 "schema": {
@@ -220,7 +220,7 @@
                         }
                     },
                     "404": {
-                        "description": "Categoría de producto no encontrada"
+                        "description": "Categoría no encontrada"
                     }
                 }
             }
@@ -286,6 +286,13 @@
     "components": {
         "schemas": {
             "Item": {
+                "required": [
+                    "id",
+                    "quantity",
+                    "individual_price",
+                    "order_id",
+                    "product_id"
+                ],
                 "properties": {
                     "id": {
                         "type": "integer",

@@ -107,18 +107,24 @@ class ProductCategoryController extends Controller
      *     ),
      *     @OA\Response(
      *         response=200,
-     *         description="Categoría de producto encontrada",
+     *         description="Categoría encontrada",
      *         @OA\JsonContent(ref="#/components/schemas/ProductCategory")
      *     ),
      *     @OA\Response(
      *         response=404,
-     *         description="Categoría de producto no encontrada"
+     *         description="Categoría no encontrada"
      *     )
      * )
      */
     public function show($id)
     {
-        $product_category = ProductCategory::findOrFail($id);
+        $product_category = ProductCategory::find($id);
+    
+        if (!$product_category) {
+            return response()->json(['message' => 'Categoria no encontrada'], 404);
+        }
+    
         return response()->json($product_category);
     }
+    
 }

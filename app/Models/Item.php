@@ -8,6 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @OA\Schema(
  *     schema="Item",
+ *     type="object",
+ *     required={"id", "quantity", "individual_price", "order_id", "product_id"},
  *     @OA\Property(property="id", type="integer", example=1),
  *     @OA\Property(property="quantity", type="integer", example=2),
  *     @OA\Property(property="individual_price", type="number", format="float", example=12.34),

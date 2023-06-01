@@ -58,9 +58,15 @@ class OrderController extends Controller
      */
     public function show($id)
     {
-        $order = Order::findOrFail($id);
+        $order = Order::find($id);
+
+        if (!$order) {
+            return response()->json(['message' => 'Orden no encontrada'], 404);
+        }
+
         return response()->json($order);
     }
+
 
     public function mostrar()
     {
