@@ -120,22 +120,22 @@
 
 								<div class="form-group">
 									<label for="name">Nombre nuevo</label>
-									<input type="text" name="name" id="name" class="form-control" value="{{ $product->name }}">
+									<input type="text" name="name" id="name" class="form-control" value="{{ $product->name }}" required>
 								</div>
 
 								<div class="form-group">
 									<label for="price">Precio nuevo</label>
-									<input type="number" name="price" id="price" class="form-control" value="{{ $product->price }}">
+									<input type="number" name="price" id="price" class="form-control" value="{{ $product->price }}" required>
 								</div>
 
 								<div class="form-group">
 									<label for="stock">Stock nuevo</label>
-									<input type="number" name="stock" id="stock" class="form-control" value="{{ $product->stock }}">
+									<input type="number" name="stock" id="stock" class="form-control" value="{{ $product->stock }}" required>
 								</div>
 
 								<div class="form-group">
 									<label for="description">Descripción nueva</label>
-									<textarea name="description" id="description" class="form-control">{{ $product->description }}</textarea>
+									<textarea name="description" id="description" class="form-control" required>{{ $product->description }}</textarea>
 								</div>
 
 								<div class="form-group">
@@ -149,7 +149,7 @@
 
 								<div class="form-group">
 									<label for="image">Imagen nueva</label>
-									<input type="text" name="image" id="image" class="form-control" value="{{ $product->image }}">
+									<input type="text" name="image" id="image" class="form-control" value="{{ $product->image }}" required>
 								</div>
 
 								<div class="form-group mt-3">
@@ -162,14 +162,9 @@
 			</div>
 
 
-
-
-
 			@endforeach
 		</tbody>
 	</table>
-
-
 
 
 
@@ -193,22 +188,22 @@
 						@csrf
 						<div class="form-group">
 							<label for="name">Nombre</label>
-							<input type="text" name="name" id="name" class="form-control">
+							<input type="text" name="name" id="name" class="form-control" required>
 						</div>
 
 						<div class="form-group">
 							<label for="price">Precio</label>
-							<input type="number" name="price" id="price" class="form-control">
+							<input type="number" name="price" id="price" class="form-control" required>
 						</div>
 
 						<div class="form-group">
 							<label for="stock">Stock</label>
-							<input type="number" name="stock" id="stock" class="form-control">
+							<input type="number" name="stock" id="stock" class="form-control" required>
 						</div>
 
 						<div class="form-group">
 							<label for="description">Descripcion</label>
-							<textarea name="description" id="description" class="form-control"></textarea>
+							<textarea name="description" id="description" class="form-control" required></textarea>
 						</div>
 
 						<div class="form-group">
@@ -222,18 +217,17 @@
 
 						<div class="form-group">
 							<label for="image">Imagen</label>
-							<input type="text" name="image" id="image" class="form-control">
+							<input type="text" name="image" id="image" class="form-control" required>
 						</div>
 
 						<div class="form-group mt-3">
-							<button type="submit" class="btn btn-primary">Crear producto</button>
+							<button type="submit" class="btn btn-primary" id="crearProductoBtn">Crear producto</button>
 						</div>
 					</form>
 				</div>
 			</div>
 		</div>
 	</div>
-
 
 
 
