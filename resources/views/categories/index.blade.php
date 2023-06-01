@@ -106,7 +106,7 @@
 
                                 <div class="form-group">
                                     <label for="name">Nombre nuevo</label>
-                                    <input type="text" name="name" id="name" class="form-control" value="{{ $category->name }}">
+                                    <input type="text" name="name" id="name" class="form-control" value="{{ $category->name }}" required>
                                 </div>
 
                                 <button type="submit" class="btn btn-primary mt-3">Modificar</button>
@@ -144,7 +144,7 @@
                         @csrf
                         <div class="form-group">
                             <label for="name">Nombre de la categoria nueva</label>
-                            <input type="text" name="name" id="name" class="form-control">
+                            <input type="text" name="name" id="name" class="form-control" required>
                         </div>
                         <button type="submit" class="btn btn-primary mt-3">Agregar categoria</button>
                     </form>
