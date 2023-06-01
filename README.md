@@ -8,6 +8,7 @@ Se presenta una aplicación web dedicada al registro de gestión de pedidos de p
 
 
 
+
 ## DETALLES DEL PROYECTO FRAMEWORK PHP - LARAVEL:
 
 Se va a registrar, para cada una de las siguientes entidades:
