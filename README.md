@@ -8,6 +8,7 @@ Se presenta una aplicación web dedicada al registro de gestión de pedidos de p
 
 
 
+
 ## DETALLES DEL PROYECTO FRAMEWORK PHP - LARAVEL:
 
 Se va a registrar, para cada una de las siguientes entidades:
@@ -68,6 +69,10 @@ En la carpeta raíz del proyecto:
 composer install
 cp .env.example .env
 php artisan key:generate
+npm install
+npm run build
+php artisan migrate
+php artisan db:seed
 php artisan serve
 ```
 #### Docker

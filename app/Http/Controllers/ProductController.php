@@ -24,14 +24,14 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $product = Product::all();
+        $product = Product::orderBy('id')->get();
         return response()->json($product);
     }
 
     public function mostrar()
     {
-        $products = Product::all();
-        $categories = ProductCategory::all();
+        $products = Product::orderBy('id')->get();
+        $categories = ProductCategory::orderBy('id')->get();
         return view('products.index', compact('products', 'categories'));
     }
 
@@ -49,6 +49,7 @@ class ProductController extends Controller
             'stock' => 'required|integer|min:0',
             'description' => 'required',
             'product_category_id' => 'required|exists:product_category,id',
+            'image' => 'required',
         ]);
 
 
@@ -70,6 +71,7 @@ class ProductController extends Controller
             'stock' => 'required|integer|min:0',
             'description' => 'required',
             'product_category_id' => 'required|exists:product_category,id',
+            'image' => 'required',
         ]);
 
         $id = $validatedData['product_id'];
@@ -84,11 +86,18 @@ class ProductController extends Controller
         $validatedData = $request->validate([
             'product_id' => 'required|numeric|min:0',
         ]);
-        $id = $validatedData['product_id'];
-        $product = Product::findOrFail($id);
-        $product->delete();
-        return redirect()->route('products.index');
+    
+        try {
+            $id = $validatedData['product_id'];
+            $product = Product::findOrFail($id);
+            $product->delete();
+            return redirect()->route('products.index');
+        } catch (\Illuminate\Database\QueryException $e) {
+            $errorMessage = "No se puede borrar el producto porque tiene pedidos asociados";
+            return redirect()->back()->with('error', $errorMessage);
+        }
     }
+    
 
     /**
      * @OA\Get(
@@ -118,7 +127,13 @@ class ProductController extends Controller
      */
     public function show($id)
     {
-        $product = Product::findOrFail($id);
+        $product = Product::find($id);
+    
+        if (!$product) {
+            return response()->json(['message' => 'Producto no encontrado'], 404);
+        }
+    
         return response()->json($product);
     }
+    
 }
