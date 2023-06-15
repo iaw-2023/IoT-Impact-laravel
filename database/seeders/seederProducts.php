@@ -92,7 +92,7 @@ class seederProducts extends Seeder
                 'product_category_id' => 3,
                 'created_at' => now(),
                 'updated_at' => now(),
-                'image' => '',
+                'image' => 'https://media.a24.com/p/72b5913680a9f8955de0ceaaefba01ca/adjuntos/296/imagenes/009/153/0009153815/1200x675/smart/el-arte-las-papas-la-receta-fritas-caseras-tecnicas-y-consejos-un-resultado-irresistible.png',
             ],
             [
                 'id' => 8,
