@@ -286,13 +286,6 @@
     "components": {
         "schemas": {
             "Item": {
-                "required": [
-                    "id",
-                    "quantity",
-                    "individual_price",
-                    "order_id",
-                    "product_id"
-                ],
                 "properties": {
                     "id": {
                         "type": "integer",
