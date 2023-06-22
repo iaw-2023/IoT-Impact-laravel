@@ -11,8 +11,8 @@ class UserReactController extends Controller
 {
     public function index()
     {
-        $usersReact = UserReact::all();
-        return view('usersReact.index', compact('usersReact'));
+        $users = UserReact::all();
+        return response()->json($users);
     }
 
     public function show($id)
