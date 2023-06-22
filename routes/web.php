@@ -42,6 +42,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/orders', [OrderController::class, 'mostrar']);
     Route::get('/items', [ItemController::class, 'mostrar']);
     Route::get('/products', [ProductController::class, 'mostrar']);
+    Route::get('/users', [UserReactController::class, 'mostrar']);
 
     //Crear, destruir y modificar productos
     Route::get('/products', [ProductController::class, 'mostrar'])->name('products.index');

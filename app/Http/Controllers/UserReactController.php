@@ -78,4 +78,10 @@ class UserReactController extends Controller
 
         return response()->json(['message' => 'UserReact registered successfully'], 201);
     }
+
+    public function mostrar()
+    {
+        $usuarios = UserReact::all();
+        return view('usersReact.index');
+    }
 }

@@ -26,17 +26,15 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>Email del cliente</th>
-                    <th>Monto total</th>
+                    <th>Email del usuario</th>
+                    <th>Contraseña</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($orders as $order)
+                @foreach($usersReact as $usuario)
                 <tr>
-                    <td>{{ $order->id }}</td>
-                    <td>{{ $order->customer_email }}</td>
-                    <td>{{ $order->total_amount}}</td>
+                    <td>{{ $usuario->email }}</td>
+                    <td>{{ $usuario->contraseña }}</td>
                 </tr>
                 @endforeach
             </tbody>
