@@ -34,7 +34,7 @@
                 @foreach($usersReact as $usuario)
                 <tr>
                     <td>{{ $usuario->email }}</td>
-                    <td>{{ $usuario->contraseña }}</td>
+                    <td>{{ $usuario->password }}</td>
                 </tr>
                 @endforeach
             </tbody>

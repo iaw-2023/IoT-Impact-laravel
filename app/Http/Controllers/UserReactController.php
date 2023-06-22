@@ -5,13 +5,14 @@ namespace App\Http\Controllers;
 use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
+use App\Models\UserReact;
 
 class UserReactController extends Controller
 {
     public function index()
     {
-        $users = UserReact::all();
-        return response()->json($users);
+        $usersReact = UserReact::all();
+        return view('usersReact.index', compact('usersReact'));
     }
 
     public function show($id)
@@ -81,7 +82,7 @@ class UserReactController extends Controller
 
     public function mostrar()
     {
-        $usuarios = UserReact::all();
-        return view('usersReact.index');
+        $usersReact = UserReact::all();
+        return view('usersReact.index', compact('usersReact'));
     }
 }
