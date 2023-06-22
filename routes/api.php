@@ -32,4 +32,6 @@ Route::group(['middleware' => ['api']], function ($router) {
 
     Route::get('products', [App\Http\Controllers\ProductController::class, 'index']);
     Route::get('products/{id}', [App\Http\Controllers\ProductController::class, 'show']);
+
+    Route::post('register', [App\Http\Controllers\UserReactController::class, 'registrarUserAPI']);
 });
