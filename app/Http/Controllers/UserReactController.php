@@ -74,11 +74,28 @@ class UserReactController extends Controller
     {
         $usuario = new UserReact();
         $usuario->email = $request->input('email');
-        $usuario->password = $request->input('password');
+        $usuario->password = Hash::make($request->input('password'));
         $usuario->save();
 
         return response()->json(['message' => 'UserReact registered successfully'], 201);
     }
+
+    public function loginUserAPI(Request $request)
+    {
+        $email = $request->input('email');
+        $password = $request->input('password');
+
+        $user = UserReact::where('email', $email)->first();
+
+        if ($user && Hash::check($password, $user->password)) {
+            // Password matches, handle successful login
+            return response()->json(['message' => 'Login successful'], 200);
+        } else {
+            // Password does not match or user not found
+            return response()->json(['message' => 'Invalid credentials'], 401);
+        }
+    }
+
 
     public function mostrar()
     {
