@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(seederProducts::class); // Include the seeder class for the 'items' table
         $this->call(seederOrders::class); // Include the seeder class for the 'items' table
         $this->call(seederItems::class); // Include the seeder class for the 'items' table
+        $this->call(UserReactSeeder::class); // Include the seeder class for the 'items' table
 
 
         /**
