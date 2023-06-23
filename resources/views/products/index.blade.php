@@ -40,7 +40,7 @@
 	<table class="table">
 		<thead>
 			<tr>
-				<th>IDD</th>
+				<th>ID</th>
 				<th>Nombre</th>
 				<th>Precio</th>
 				<th>Stock</th>
