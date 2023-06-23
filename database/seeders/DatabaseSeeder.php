@@ -30,7 +30,7 @@ class DatabaseSeeder extends Seeder
                                 WHERE table_schema = \'public\' 
                                 ORDER BY table_name;');
 
-        $ignores = array('users', 'personal_access_tokens', 'failed_jobs', 'migrations', 'admin_setting', 'sessions',
+        $ignores = array('users', 'usersReact', 'personal_access_tokens', 'failed_jobs', 'migrations', 'admin_setting', 'sessions',
                         'model_has_permissions', 'model_has_roles', 'password_reset_tokens', 'role_has_permissions');
 
         foreach ($tables as $table) {
