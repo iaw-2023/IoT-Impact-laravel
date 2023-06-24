@@ -115,6 +115,7 @@ class OrderController extends Controller
         $order = new Order();
         $order->customer_email = $request->input('customer_email');
         $order->total_amount = $request->input('total_amount');
+        $order->efectivo = true;
         $order->save();
 
         // Creo los items de la orden
