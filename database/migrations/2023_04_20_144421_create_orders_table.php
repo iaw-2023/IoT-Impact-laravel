@@ -16,6 +16,7 @@ return new class extends Migration
             $table->timestamps();
             $table->string('customer_email');
             $table->float('total_amount')->unsigned();
+            $table->boolean('efectivo');
         });
     }
 
