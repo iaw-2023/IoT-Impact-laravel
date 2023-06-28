@@ -6,7 +6,6 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\UserReact;
-use Illuminate\Support\Facades\Bcrypt;
 
 class UserReactController extends Controller
 {
@@ -75,7 +74,7 @@ class UserReactController extends Controller
     {
         $usuario = new UserReact();
         $usuario->email = $request->input('email');
-        $usuario->password = bcrypt($request->input('password'));
+        $usuario->password = Hash::make($request->input('password'));
         $usuario->save();
 
         return response()->json(['message' => 'UserReact registered successfully'], 201);
