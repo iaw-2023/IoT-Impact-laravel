@@ -74,7 +74,7 @@ class UserReactController extends Controller
     {
         $usuario = new UserReact();
         $usuario->email = $request->input('email');
-        $usuario->password = Hash::make($request->input('password'));
+        $usuario->password = bcrypt($request->input('password'));
         $usuario->save();
 
         return response()->json(['message' => 'UserReact registered successfully'], 201);
