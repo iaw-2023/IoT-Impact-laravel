@@ -6,6 +6,7 @@ use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use App\Models\UserReact;
+use Illuminate\Support\Facades\Bcrypt;
 
 class UserReactController extends Controller
 {
