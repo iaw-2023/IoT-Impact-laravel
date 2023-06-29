@@ -26,7 +26,7 @@ class seederProducts extends Seeder
                 'product_category_id' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
-                'image' => 'https://www.pngitem.com/pimgs/m/57-579572_imagenes-de-hamburguesas-png-transparent-png.png',
+                'image' => 'https://i.ibb.co/bPXB2fJ/hambur.jpg',
             ],
             [
                 'id' => 2,
@@ -37,7 +37,7 @@ class seederProducts extends Seeder
                 'product_category_id' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
-                'image' => 'https://www.pngitem.com/pimgs/m/57-579572_imagenes-de-hamburguesas-png-transparent-png.png',
+                'image' => 'https://i.ibb.co/MfRBrNY/d1482a70-1aa4-464c-a805-226e533dcd29.jpg',
             ],
             [
                 'id' => 3,
@@ -48,7 +48,7 @@ class seederProducts extends Seeder
                 'product_category_id' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
-                'image' => 'https://www.pngitem.com/pimgs/m/57-579572_imagenes-de-hamburguesas-png-transparent-png.png',
+                'image' => 'https://i.ibb.co/ry6dFFx/5de457f6-4ef9-4c92-adc0-806461d32c3c.jpg',
             ],
             [
                 'id' => 4,
