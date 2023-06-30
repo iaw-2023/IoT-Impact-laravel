@@ -188,7 +188,6 @@ server {
     server_name burger-planet.ddns.net;
     return 404; # managed by Certbot
 
-
 }
 ``` 
 
@@ -200,12 +199,44 @@ Así mismo, la raspberry debe tener IP local fija, y el router redirigiendo las 
 ### CD/CI
 Ahora debemos automatizar el deploy. Cada push en la rama *deploy* actualizará el deploy de la raspi. Para ello, necesitamos realizar los siguientes pasos para configurar un webhook:
 En la raspi instalamos el siguiente paquete https://github.com/adnanh/webhook
-Agregamos la siguiente configuracion:
+Agregamos lo siguiente al archivo hooks.yml:
+
+``` 
+- id: github/admin-burger-planet
+  execute-command: "/home/wecher/Git/IoT-Impact-laravel/deploy.sh"
+  command-working-directory: "/home/wecher/Git/IoT-Impact-laravel"
+  response-message: "OK"
+  pass-arguments-to-command:
+    - source: payload
+      name: repository.name
+  trigger-rule:
+    and:
+      - match:
+          type: payload-hmac-sha1
+          secret: <CONTRASEÑA>
+          parameter:
+            source: header
+            name: X-Hub-Signature
+      - match:
+          type: value
+          value: "refs/heads/deploy"
+          parameter:
+            source: payload
+            name: ref
+``` 
+
+Recordar setear la contraseña en esa configuración.
+Con ésto acabmos de crear un endpoint, al cual se puede acceder con el siguiente link:
+https:// <DNS> /github/admin-burger-planet
+
+En los settings del repo, vamos a la pestaña *Webhook*, agregamos el link y la siguiente configuracion:
+- "Content type" debe ser de tipo "applicaction/json".
+- La clave secreta debe ser la que elegimos en la configuración del archivo hooks.yml.
+- SSL verification: enable
+- Seteamos que llame al endpoint en cada evento push
 
 
-
-Agregamos la siguiente configuracion:
-
+Listo, siguiendo estos pasos, cada vez que haya un cambio en la rama *deploy*, se actualizará el deploy de la raspi.
 
 
 
