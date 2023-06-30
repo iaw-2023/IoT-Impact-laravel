@@ -215,7 +215,7 @@ https:// < DNS > /github/admin-burger-planet
 Cada vez que se llame a ese endpoint, se ejecutará el siguiente [script](https://github.com/iaw-2023/IoT-Impact-laravel/blob/deploy/deploy.sh)
 
 
-En los settings del repo, vamos a la pestaña **Webhook**, agregamos el link y la siguiente configuracion:
+En los settings del repo, vamos a la pestaña **Webhook**, agregamos el link del endpoint y la siguiente configuracion:
 - "Content type" debe ser de tipo "applicaction/json".
 - La clave secreta debe ser la que elegimos en la configuración del archivo hooks.yml.
 - SSL verification: enable
