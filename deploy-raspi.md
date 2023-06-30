@@ -54,7 +54,7 @@ php artisan key:generate
 ``` 
 APP_NAME="Burger Planet"
 APP_ENV=production
-APP_DEBUG=true
+APP_DEBUG=false
 ``` 
 
 ### Variables de entorno: MAIL
@@ -102,7 +102,7 @@ DB_CONNECTION=mysql
 DB_HOST=127.0.0.1
 DB_PORT=3306
 DB_DATABASE=burgerplanet
-DB_USERNAME=root
+DB_USERNAME=root      // o el usuario que consideremos apropiado
 DB_PASSWORD=<clave de root>
 ```
 
@@ -140,7 +140,7 @@ Luego usamos [Certbot](https://certbot.eff.org/) para generar el certificado SSL
 
 ``` 
 server {
-    server_name burger-planet.ddns.net;
+    server_name burger-planet.chewer.net;
     root /home/wecher/Git/IoT-Impact-laravel/public;
  
     add_header X-Frame-Options "SAMEORIGIN";
@@ -193,8 +193,19 @@ server {
 ``` 
 
 ### DNS (gratis)
-Nos registramos en https://www.noip.com/, creamos el host "admin-burger-planet.duckdns.net" y le seteamos la IP pública de la raspberry.
-Finalmente, en el router abrimos el puerto 443 para permitir conexiones HTTPS.
+Se puede obtener un DNS gratuito en https://www.noip.com/ o en https://www.cloudflare.com/.
+Vinculamos el DNS con la IP pública del de proveedor de internet de la raspberry.
+Así mismo, la raspberry debe tener IP local fija, y el router redirigiendo las solicitudes del puerto 443 hacia ella.
+
+### CD/CI
+Ahora debemos automatizar el deploy. Cada push en la rama *deploy* actualizará el deploy de la raspi. Para ello, necesitamos realizar los siguientes pasos para configurar un webhook:
+En la raspi instalamos el siguiente paquete https://github.com/adnanh/webhook
+Agregamos la siguiente configuracion:
+
+
+
+Agregamos la siguiente configuracion:
+
 
 
 
