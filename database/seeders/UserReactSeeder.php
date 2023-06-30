@@ -25,7 +25,7 @@ class UserReactSeeder extends Seeder
         DB::table('users')->insert([
             [
                 'name' => 'admin',
-                'email' => 'admin@iaw.com',
+                'email' => '1admin@iaw.com',
                 'password' => Hash::make('admin123'),
             ],
         ]);
