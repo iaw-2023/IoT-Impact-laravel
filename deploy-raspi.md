@@ -136,11 +136,12 @@ chmod -R 775 bootstrap/cache
 
 ### Nginx
 Usamos Nginx para exponer la web. La configuración base se puede obtener del siguiente [link](https://laravel.com/docs/10.x/deployment).
-Luego usamos [Certbot](https://certbot.eff.org/) para generar el certificado SSL. La configuración final de Nginx es la siguiente:
+En caso de necesitar un certificado SSL, podemos usar [Certbot](https://certbot.eff.org/). La configuración final de Nginx es la siguiente:
 
 ``` 
 server {
-    server_name burger-planet.chewer.net;
+
+    server_name admin-burger-planet.chewer.net;
     root /home/wecher/Git/IoT-Impact-laravel/public;
  
     add_header X-Frame-Options "SAMEORIGIN";
@@ -168,27 +169,8 @@ server {
     location ~ /\.(?!well-known).* {
         deny all;
     }
-
-    listen [::]:443 ssl; # managed by Certbot
-    listen 443 ssl; # managed by Certbot
-    ssl_certificate /etc/letsencrypt/live/burger-planet.ddns.net/fullchain.pem; # managed by Certbot
-    ssl_certificate_key /etc/letsencrypt/live/burger-planet.ddns.net/privkey.pem; # managed by Certbot
-    include /etc/letsencrypt/options-ssl-nginx.conf; # managed by Certbot
-    ssl_dhparam /etc/letsencrypt/ssl-dhparams.pem; # managed by Certbot
-
 }
-server {
-    if ($host = burger-planet.ddns.net) {
-        return 301 https://$host$request_uri;
-    } # managed by Certbot
 
-
-    listen 80;
-    listen [::]:80;
-    server_name burger-planet.ddns.net;
-    return 404; # managed by Certbot
-
-}
 ``` 
 
 ### DNS (gratis)
@@ -197,9 +179,9 @@ Vinculamos el DNS con la IP pública del de proveedor de internet de la raspberr
 Así mismo, la raspberry debe tener IP local fija, y el router redirigiendo las solicitudes del puerto 443 hacia ella.
 
 ### CD/CI
-Ahora debemos automatizar el deploy. Cada push en la rama *deploy* actualizará el deploy de la raspi. Para ello, necesitamos realizar los siguientes pasos para configurar un webhook:
-En la raspi instalamos el siguiente paquete https://github.com/adnanh/webhook
-Agregamos lo siguiente al archivo hooks.yml:
+Ahora debemos automatizar el deploy. Cada push en la rama **deploy** actualizará el deploy de la raspi. Para ello, necesitamos realizar los siguientes pasos para configurar un webhook:
+
+En la raspi instalamos el siguiente paquete https://github.com/adnanh/webhook y agregamos lo siguiente al archivo hooks.yml:
 
 ``` 
 - id: github/admin-burger-planet
@@ -226,8 +208,8 @@ Agregamos lo siguiente al archivo hooks.yml:
 ``` 
 
 Recordar setear la contraseña en esa configuración.
-Con ésto acabmos de crear un endpoint, al cual se puede acceder con el siguiente link:
-https:// <DNS> /github/admin-burger-planet
+Con ésto acabamos de crear un endpoint, al cual se puede acceder con el siguiente link:
+https:// < DNS > /github/admin-burger-planet
 
 En los settings del repo, vamos a la pestaña *Webhook*, agregamos el link y la siguiente configuracion:
 - "Content type" debe ser de tipo "applicaction/json".
@@ -236,7 +218,7 @@ En los settings del repo, vamos a la pestaña *Webhook*, agregamos el link y la 
 - Seteamos que llame al endpoint en cada evento push
 
 
-Listo, siguiendo estos pasos, cada vez que haya un cambio en la rama *deploy*, se actualizará el deploy de la raspi.
+Listo, siguiendo estos pasos, cada vez que haya un cambio en la rama **deploy**, se actualizará el deploy de la raspi.
 
 
 
