@@ -178,7 +178,7 @@ Se puede obtener un DNS gratuito en https://www.noip.com/ o en https://www.cloud
 Vinculamos el DNS con la IP pública del de proveedor de internet de la raspberry.
 Así mismo, la raspberry debe tener IP local fija, y el router redirigiendo las solicitudes del puerto 443 hacia ella.
 
-### CD/CI
+### CI/CD
 Ahora debemos automatizar el deploy. Cada push en la rama **deploy** actualizará el deploy de la raspi. Para ello, necesitamos realizar los siguientes pasos para configurar un webhook:
 
 En la raspi instalamos el siguiente paquete https://github.com/adnanh/webhook y agregamos lo siguiente al archivo hooks.yml:
