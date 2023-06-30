@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# Envia notif de deploy via Telegram
 source /home/wecher/Scripts/telegram.sh
 
 send "Starting deploy: Burger Planet (laravel)"
@@ -23,6 +24,5 @@ php artisan event:cache
 php artisan route:cache
 php artisan view:cache
 
-
+# Envia notif de deploy via Telegram
 send "End deploy: Burger Planet (laravel)"
-
