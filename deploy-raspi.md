@@ -209,6 +209,7 @@ En la raspi instalamos el siguiente paquete https://github.com/adnanh/webhook y 
 
 Recordar setear la contraseña en esa configuración.
 Con esa configuración, acabamos de crear un endpoint, al cual se puede acceder con el siguiente link:
+
 https:// < DNS > /github/admin-burger-planet
 
 Cada vez que se llame a ese endpoint, se ejecutará el siguiente [script](https://github.com/iaw-2023/IoT-Impact-laravel/blob/deploy/deploy.sh)
