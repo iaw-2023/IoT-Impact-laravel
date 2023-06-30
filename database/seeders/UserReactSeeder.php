@@ -13,7 +13,7 @@ class UserReactSeeder extends Seeder
     {
         DB::table('usersReact')->insert([
             [
-                'email' => 'test',
+                'email' => 'test@gmail.com',
                 'password' => Hash::make('a'),
             ],
             [
