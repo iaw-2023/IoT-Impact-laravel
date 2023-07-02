@@ -78,3 +78,4 @@ php artisan serve
 #### Docker
 En la carpeta [db-setup-docker](db-setup-docker/) se encuentra el archivo [docker-compose.yml](db-setup-docker/docker-compose.yml), el cual levanta PostgreSQL y pgAdmin.
 
+

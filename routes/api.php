@@ -23,6 +23,7 @@ Route::group(['middleware' => ['api']], function ($router) {
     Route::get('orders', [App\Http\Controllers\OrderController::class, 'index']);
     Route::get('orders/{id}', [App\Http\Controllers\OrderController::class, 'show']);
     Route::post('orders', [App\Http\Controllers\OrderController::class, 'storeAPI']);
+    Route::post('orders/mp/', [App\Http\Controllers\OrderController::class, 'mercadoPago']);
 
     Route::get('items', [App\Http\Controllers\ItemController::class, 'index']);
     Route::get('items/{id}', [App\Http\Controllers\ItemController::class, 'show']);
@@ -32,4 +33,9 @@ Route::group(['middleware' => ['api']], function ($router) {
 
     Route::get('products', [App\Http\Controllers\ProductController::class, 'index']);
     Route::get('products/{id}', [App\Http\Controllers\ProductController::class, 'show']);
+
+    Route::post('register', [App\Http\Controllers\UserReactController::class, 'registrarUserAPI']);
+    Route::post('loginReact', [App\Http\Controllers\UserReactController::class, 'loginUserAPI']);
+    Route::get('users', [App\Http\Controllers\UserReactController::class, 'index']);
+
 });

@@ -67,6 +67,24 @@ class OrderController extends Controller
         return response()->json($order);
     }
 
+    public function mercadoPago(Request $request)
+    {
+        $email = $request->input('email');
+        $order = Order::where('customer_email', $email)
+            ->orderBy('created_at', 'desc')
+            ->first();
+
+        if (!$order) {
+            return response()->json(['message' => 'Orden no encontrada'], 404);
+        }
+
+        $order->efectivo = false;
+        $order->save();
+
+        return response()->json(['message' => 'OK'], 200);
+    }
+
+
 
     public function mostrar()
     {
@@ -115,6 +133,7 @@ class OrderController extends Controller
         $order = new Order();
         $order->customer_email = $request->input('customer_email');
         $order->total_amount = $request->input('total_amount');
+        $order->efectivo = true;
         $order->save();
 
         // Creo los items de la orden
@@ -130,6 +149,4 @@ class OrderController extends Controller
 
         return response()->json(['message' => 'Order created successfully'], 201);
     }
-
-
 }

@@ -5,6 +5,7 @@ use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ItemController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductCategoryController;
+use App\Http\Controllers\UserReactController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -42,6 +43,7 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/orders', [OrderController::class, 'mostrar']);
     Route::get('/items', [ItemController::class, 'mostrar']);
     Route::get('/products', [ProductController::class, 'mostrar']);
+    Route::get('/users', [UserReactController::class, 'mostrar']);
 
     //Crear, destruir y modificar productos
     Route::get('/products', [ProductController::class, 'mostrar'])->name('products.index');

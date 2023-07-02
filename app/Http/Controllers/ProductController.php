@@ -6,8 +6,9 @@ use App\Models\Product;
 use App\Models\ProductCategory;
 use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
+use CloudinaryLabs\CloudinaryLaravel\Facades\Cloudinary;
 
-class ProductController extends Controller
+class ProductController extends BaseController
 {
 
     /**
@@ -43,17 +44,28 @@ class ProductController extends Controller
 
     public function store(Request $request)
     {
+        //dd($request->all()); // Verificar los datos recibidos del formulario
         $validatedData = $request->validate([
             'name' => 'required',
             'price' => 'required|numeric|min:0',
             'stock' => 'required|integer|min:0',
             'description' => 'required',
             'product_category_id' => 'required|exists:product_category,id',
-            'image' => 'required',
+            'image' => 'required|image',
         ]);
 
+        $uploadedFile = $request->file('image');
+        $uploadedFileUrl = Cloudinary::upload($uploadedFile->getRealPath())->getSecurePath();
 
-        $product = Product::create($validatedData);
+        Product::create([
+            'name' => $validatedData['name'],
+            'price' => $validatedData['price'],
+            'stock' => $validatedData['stock'],
+            'description' => $validatedData['description'],
+            'product_category_id' => $validatedData['product_category_id'],
+            'image' => $uploadedFileUrl,
+        ]);
+
         return redirect()->route('products.index');
     }
 
@@ -61,7 +73,7 @@ class ProductController extends Controller
     {
         return view('products.edit', compact('product'));
     }
-    
+
     public function update(Request $request)
     {
         $validatedData = $request->validate([
@@ -71,22 +83,39 @@ class ProductController extends Controller
             'stock' => 'required|integer|min:0',
             'description' => 'required',
             'product_category_id' => 'required|exists:product_category,id',
-            'image' => 'required',
+            'image' => 'nullable|image',
         ]);
-
+    
         $id = $validatedData['product_id'];
         $product = Product::findOrFail($id);
-        $product->update($validatedData);
-        
+    
+        // Actualizar los campos del producto excepto la imagen
+        $product->update([
+            'name' => $validatedData['name'],
+            'price' => $validatedData['price'],
+            'stock' => $validatedData['stock'],
+            'description' => $validatedData['description'],
+            'product_category_id' => $validatedData['product_category_id'],
+        ]);
+    
+        // Verificar si se envió una nueva imagen y procesarla
+        if ($request->hasFile('image')) {
+            $uploadedFile = $request->file('image');
+            $uploadedFileUrl = Cloudinary::upload($uploadedFile->getRealPath())->getSecurePath();
+            $product->image = $uploadedFileUrl; // Actualizar la imagen solo si se envía una nueva
+            $product->save();
+        }
+    
         return redirect()->route('products.index');
     }
+    
 
     public function destroy(Request $request)
     {
         $validatedData = $request->validate([
             'product_id' => 'required|numeric|min:0',
         ]);
-    
+
         try {
             $id = $validatedData['product_id'];
             $product = Product::findOrFail($id);
@@ -97,7 +126,7 @@ class ProductController extends Controller
             return redirect()->back()->with('error', $errorMessage);
         }
     }
-    
+
 
     /**
      * @OA\Get(
@@ -128,12 +157,11 @@ class ProductController extends Controller
     public function show($id)
     {
         $product = Product::find($id);
-    
+
         if (!$product) {
             return response()->json(['message' => 'Producto no encontrado'], 404);
         }
-    
+
         return response()->json($product);
     }
-    
 }

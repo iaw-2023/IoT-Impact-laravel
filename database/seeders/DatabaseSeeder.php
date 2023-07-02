@@ -20,6 +20,7 @@ class DatabaseSeeder extends Seeder
         $this->call(seederProducts::class); // Include the seeder class for the 'items' table
         $this->call(seederOrders::class); // Include the seeder class for the 'items' table
         $this->call(seederItems::class); // Include the seeder class for the 'items' table
+        $this->call(UserReactSeeder::class); // Include the seeder class for the 'items' table
 
 
         /**
@@ -30,7 +31,7 @@ class DatabaseSeeder extends Seeder
                                 WHERE table_schema = \'public\' 
                                 ORDER BY table_name;');
 
-        $ignores = array('users', 'personal_access_tokens', 'failed_jobs', 'migrations', 'admin_setting', 'sessions',
+        $ignores = array('users', 'usersReact', 'personal_access_tokens', 'failed_jobs', 'migrations', 'admin_setting', 'sessions',
                         'model_has_permissions', 'model_has_roles', 'password_reset_tokens', 'role_has_permissions');
 
         foreach ($tables as $table) {

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-        <title> BurgerPlanet - Items </title>
+        <title> BurgerPlanet - Ordenes </title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
@@ -26,21 +26,15 @@
         <table class="table">
             <thead>
                 <tr>
-                    <th>ID</th>
-                    <th>ID Orden</th>
-                    <th>Cantidad</th>
-                    <th>Producto</th>
-                    <th>Precio individual</th>
+                    <th>Email del usuario</th>
+                    <th>Contraseña</th>
                 </tr>
             </thead>
             <tbody>
-                @foreach($items as $item)
+                @foreach($usersReact as $usuario)
                 <tr>
-                    <td>{{ $item->id }}</td>
-                    <td>{{ $item->order_id }}</td>
-                    <td>{{ $item->quantity }}</td>
-                    <td>{{ $item->product->name }}</td>
-                    <td>{{ $item->individual_price }}</td>
+                    <td>{{ $usuario->email }}</td>
+                    <td>{{ $usuario->password }}</td>
                 </tr>
                 @endforeach
             </tbody>

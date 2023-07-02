@@ -26,7 +26,7 @@ class seederProducts extends Seeder
                 'product_category_id' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
-                'image' => 'https://www.pngitem.com/pimgs/m/57-579572_imagenes-de-hamburguesas-png-transparent-png.png',
+                'image' => 'https://res.cloudinary.com/dvha0fi2p/image/upload/v1688135835/qhfdjbowiybx9vx7ujbo.jpg',
             ],
             [
                 'id' => 2,
@@ -37,7 +37,7 @@ class seederProducts extends Seeder
                 'product_category_id' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
-                'image' => 'https://www.pngitem.com/pimgs/m/57-579572_imagenes-de-hamburguesas-png-transparent-png.png',
+                'image' => 'https://res.cloudinary.com/dvha0fi2p/image/upload/v1688135856/fyqkladfq3myw22yxzyb.jpg',
             ],
             [
                 'id' => 3,
@@ -48,7 +48,7 @@ class seederProducts extends Seeder
                 'product_category_id' => 1,
                 'created_at' => now(),
                 'updated_at' => now(),
-                'image' => 'https://www.pngitem.com/pimgs/m/57-579572_imagenes-de-hamburguesas-png-transparent-png.png',
+                'image' => 'https://res.cloudinary.com/dvha0fi2p/image/upload/v1688135835/qhfdjbowiybx9vx7ujbo.jpg',
             ],
             [
                 'id' => 4,
@@ -59,7 +59,7 @@ class seederProducts extends Seeder
                 'product_category_id' => 2,
                 'created_at' => now(),
                 'updated_at' => now(),
-                'image' => 'https://w7.pngwing.com/pngs/685/904/png-transparent-fizzy-drinks-coca-cola-diet-coke-rc-cola-coca-cola-food-cola-soft-drink.png',
+                'image' => 'https://res.cloudinary.com/dvha0fi2p/image/upload/v1688136311/dlp4otawtlsvebqubbcp.jpg',
             ],
             [
                 'id' => 5,
@@ -70,7 +70,7 @@ class seederProducts extends Seeder
                 'product_category_id' => 2,
                 'created_at' => now(),
                 'updated_at' => now(),
-                'image' => 'https://w7.pngwing.com/pngs/629/634/png-transparent-fanta-fizzy-drinks-coca-cola-juice-appletiser-guarana-antartica-food-orange-non-alcoholic-beverage.png',
+                'image' => 'https://res.cloudinary.com/dvha0fi2p/image/upload/v1688136319/hcrk5ixwzv4slrdn3gfz.jpg',
             ],
             [
                 'id' => 6,
@@ -81,7 +81,7 @@ class seederProducts extends Seeder
                 'product_category_id' => 2,
                 'created_at' => now(),
                 'updated_at' => now(),
-                'image' => 'https://superlago.com.ar/wp-content/uploads/2021/04/web03.png',
+                'image' => 'https://res.cloudinary.com/dvha0fi2p/image/upload/v1688136328/kqrv0vtmatfr99v3z4ie.webp',
             ],
             [
                 'id' => 7,
@@ -92,7 +92,7 @@ class seederProducts extends Seeder
                 'product_category_id' => 3,
                 'created_at' => now(),
                 'updated_at' => now(),
-                'image' => '',
+                'image' => 'https://res.cloudinary.com/dvha0fi2p/image/upload/v1688136510/druhfzbsopv3vnnwsaz3.webp',
             ],
             [
                 'id' => 8,
@@ -103,7 +103,7 @@ class seederProducts extends Seeder
                 'product_category_id' => 3,
                 'created_at' => now(),
                 'updated_at' => now(),
-                'image' => 'https://media.a24.com/p/72b5913680a9f8955de0ceaaefba01ca/adjuntos/296/imagenes/009/153/0009153815/1200x675/smart/el-arte-las-papas-la-receta-fritas-caseras-tecnicas-y-consejos-un-resultado-irresistible.png',
+                'image' => 'https://res.cloudinary.com/dvha0fi2p/image/upload/v1688136520/achh6is22xfiwofsj0gq.jpg',
             ],
         ];
 

@@ -23,6 +23,7 @@ class seederOrders extends Seeder
                 'total_amount' => 3600,
                 'created_at' => now(),
                 'updated_at' => now(),
+                'efectivo' => true,
             ],
             [
                 'id' => 2,
@@ -30,6 +31,7 @@ class seederOrders extends Seeder
                 'total_amount' => 7250,
                 'created_at' => now(),
                 'updated_at' => now(),
+                'efectivo' => false,
             ],
             [
                 'id' => 3,
@@ -37,6 +39,7 @@ class seederOrders extends Seeder
                 'total_amount' => 2000,
                 'created_at' => now(),
                 'updated_at' => now(),
+                'efectivo' => true,
             ],
         ];
 
