@@ -1,3 +1,25 @@
+## Deploys
+### Vercel:
+https://iot-impact-js.vercel.app/
+
+http://iot-impact-laravel.vercel.app/
+
+### AWS Amplify:
+https://deploy.dza6lgfhpbee3.amplifyapp.com/
+### Raspberry Pi:
+https://burger-planet.chewer.net/
+
+https://admin-burger-planet.chewer.net/
+
+---
+
+### Todos los repos del proyecto:
+- https://github.com/iaw-2023/IoT-Impact-js/
+- https://github.com/iaw-2023/IoT-Impact-laravel/
+- https://github.com/iaw-2023/IoT-Impact-nodejs/
+
+---
+
 ## IDEA DEL PROYECTO
 
 Se presenta una aplicación web dedicada al registro de gestión de pedidos de productos de un establecimiento de venta de comida. Los clientes podrán realizar pedidos de comida, y los empleados podrán gestionarlos.
