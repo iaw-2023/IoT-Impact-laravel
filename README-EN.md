@@ -1,72 +1,56 @@
 [![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/rodrikraus/IoT-Impact-laravel/blob/main/README-EN.md)
 [![es](https://img.shields.io/badge/lang-es-yellow.svg)](https://github.com/rodrikraus/IoT-Impact-laravel/blob/main/README-ES.md)
 
-## IDEA DEL PROYECTO
+## PROJECT IDEA
 
-Se presenta una aplicación web dedicada al registro de gestión de pedidos de productos de un establecimiento de venta de comida. Los clientes podrán realizar pedidos de comida, y los empleados podrán gestionarlos.
+A web application dedicated to the registration of product order management of a food sales establishment is presented. Customers will be able to place food orders, and employees will be able to manage them.
 
-![Diagrama Entidad Relacion](docs/entity-relationship-diagram.png)
-
-
+![Entity Relationship Diagram](docs/entity-relationship-diagram.png)
 
 
 
+## DETAILS OF THE PHP FRAMEWORK PROJECT - LARAVEL:    
 
-## DETALLES DEL PROYECTO FRAMEWORK PHP - LARAVEL:
+It will be registered, for each of the following entities:
+- For each **PRODUCT**, its name, description, price and stock.
+- For each **ORDER**, the email of the person who placed it, the total price, and the items it contains.
+- For each **ITEM**, its quantity.
+- For each **PRODUCT CATEGORIES**, its name.
 
-Se va a registrar, para cada una de las siguientes entidades:
-- Para cada **PRODUCTO**, su nombre, descripción, precio y el stock.
-- Para cada **ORDEN**, el email de la persona que lo hizo, el precio total, y los items que contenga.
-- Para cada **ITEM**, su cantidad.
-- Para cada **CATEGORÍAS DE PRODUCTO**, su nombre.
-
-Cada cliente podrá hacer un pedido al establecimiento de comida, en donde se va a generar una orden con los items que la persona haya solicitado, la cual va a consistir de uno o mas productos.
+Each customer will be able to place an order at the food establishment, where an order will be generated with the items that the person has requested, which will consist of one or more products.
 
 
-### ENTIDADES ACTUALIZABLES
 
-Se podrán actualizar:
-- Products
+### UPDATABLE ENTITIES
+
+They can be updated:
+-Products
 - Products_Category
 
-### REPORTES
+### REPORTS
 
-Se pueden generar los siguientes **reportes** :
-- Un reporte que contenga todos los pedidos que haya hecho un cliente.
-- Un reporte con la cantidad de pedidos y dinero ganado por mes.
-- Un reporte que detalle el stock restante de cada producto.
+The following **reports** can be generated:
+- A report that contains all the orders that a customer has made.
+- A report with the number of orders and money earned per month.
+- A report that details the remaining stock of each product.
 
-### OBTENCIÓN Y MODIFICACIÓN MEDIANTE API
+### OBTAIN AND MODIFY USING API
 
-Se podrán obtener y modificar por API las siguientes entidades:
+The following entities can be obtained and modified by API:
 - Order
 - Items
 
-Además, utilizando algún mecanismo de filtrado, se podrá obtener por API las siguientes entidades:
+Additionally, using some filtering mechanism, the following entities can be obtained via API:
 - Products
 - Products_Category
 
-
-
-
-## DETALLES DEL PROYECTO JAVASCRIPT - REACT:
-
-### INFORMACIÓN OBSERVABLE POR EL USUARIO
-
-El usuario podrá ver todos los productos disponibles, con su precio y descripción.
-También podrá ver su pedido actual y su historial de pedidos.
-
-### ACCIONES REALIZABLES POR EL USUARIO
-
-El usuario podrá armar su pedido agregando productos a su carrito, para luego decidir si cancelar su compra o confirmar su pedido. Luego podrá consultar el mismo o consultar su historial de pedidos.
-
----
 
 
 ### Extras:
 
-#### Comandos útiles:
-En la carpeta raíz del proyecto:
+#### Useful commands:
+In the root folder of the project:
+
 
 ``` 
 composer install
