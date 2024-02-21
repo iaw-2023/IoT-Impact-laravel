@@ -22,9 +22,7 @@ Each customer will be able to place an order at the food establishment, where an
 
 
 ### UPDATABLE ENTITIES
-
-They can be updated:
--Products
+- Products
 - Products_Category
 
 ### REPORTS
@@ -36,7 +34,7 @@ The following **reports** can be generated:
 
 ### OBTAIN AND MODIFY USING API
 
-The following entities can be obtained and modified by API:
+The following entities can be obtained and modified via API:
 - Order
 - Items
 
