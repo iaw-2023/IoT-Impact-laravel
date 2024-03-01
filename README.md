@@ -46,7 +46,9 @@ Además, utilizando algún mecanismo de filtrado, se podrá obtener por API las 
 - Products
 - Products_Category
 
-
+![Login screen](Screenshots/screen1.png)
+![](Screenshots/screen2.png)
+![](Screenshots/screen3.png)
 
 
 ## DETALLES DEL PROYECTO JAVASCRIPT - REACT:
@@ -66,7 +68,9 @@ El usuario podrá armar su pedido agregando productos a su carrito, para luego d
 ### Extras:
 
 #### Como correr el proyecto:
-Instalar PHP y composer (para instalar composer en windows quizas sea necesario activar todas las extensiones en el archivo php.ini), y estando en la carpeta raíz del proyecto correr:
+Instalar PHP y composer (para instalar composer en windows quizas sea necesario activar todas las extensiones en el archivo php.ini).
+Crear la base de datos en pgAdmin y poner los datos de accesso en el archivo .env
+Estando en la carpeta raíz del proyecto correr:
 - composer install
 - php artisan migrate (crea las tablas en la base de datos)
 - php artisan db:seed (ejecuta los seeders, llenando las tablas de la base de datos con los datos que especifique el seeder)
