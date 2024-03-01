@@ -42,25 +42,26 @@ Additionally, using some filtering mechanism, the following entities can be obta
 - Products
 - Products_Category
 
-
+### Login screen
+![Login screen](docs/screen1.png)
+### Products screen
+![](docs/screen2.png)
+![](docs/screen3.png)
+### Agregando un nuevo producto
+![](docs/screen4.png)
 
 ### Extras:
 
-#### Useful commands:
-In the root folder of the project:
-
-
-``` 
-composer install
-cp .env.example .env
-php artisan key:generate
-npm install
-npm run build
-php artisan migrate
-php artisan db:seed
-php artisan serve
-```
+#### How to run the project:
+Install PHP and composer (you may have to enable certain extensions in the php.ini file).
+Create the database using pgAdmin and set the access data to this db in the .env file
+On the project's root directory, run:
+- composer install
+- php artisan migrate (creates the tables)
+- php artisan db:seed (fills the tables with data)
+- php artisan serve (run the server)
+  
 #### Docker
-En la carpeta [db-setup-docker](db-setup-docker/) se encuentra el archivo [docker-compose.yml](db-setup-docker/docker-compose.yml), el cual levanta PostgreSQL y pgAdmin.
+On the folder [db-setup-docker](db-setup-docker/) there is a file [docker-compose.yml](db-setup-docker/docker-compose.yml), which runs PostgreSQL and pgAdmin.
 
 
