@@ -46,9 +46,9 @@ Además, utilizando algún mecanismo de filtrado, se podrá obtener por API las 
 - Products
 - Products_Category
 
-![Login screen](Screenshots/screen1.png)
-![](Screenshots/screen2.png)
-![](Screenshots/screen3.png)
+![Login screen](docs/screen1.png)
+![](docs/screen2.png)
+![](docs/screen3.png)
 
 
 ## DETALLES DEL PROYECTO JAVASCRIPT - REACT:
