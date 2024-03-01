@@ -46,12 +46,12 @@ Además, utilizando algún mecanismo de filtrado, se podrá obtener por API las 
 - Products
 - Products_Category
 
-###Login screen
+### Login screen
 ![Login screen](docs/screen1.png)
-###Products screen
+### Products screen
 ![](docs/screen2.png)
 ![](docs/screen3.png)
-###Adding a new product
+### Agregando un nuevo producto
 ![](docs/screen4.png)
 
 
