@@ -1,5 +1,29 @@
+
 [![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/rodrikraus/IoT-Impact-laravel/blob/main/README-EN.md)
 [![es](https://img.shields.io/badge/lang-es-yellow.svg)](https://github.com/rodrikraus/IoT-Impact-laravel/blob/main/README.md)
+
+## Deploys
+### Vercel:
+https://iot-impact-js.vercel.app/
+
+http://iot-impact-laravel.vercel.app/
+
+### AWS Amplify:
+https://deploy.dza6lgfhpbee3.amplifyapp.com/
+### Raspberry Pi:
+https://burger-planet.chewer.net/
+
+https://admin-burger-planet.chewer.net/
+
+---
+
+### Todos los repos del proyecto:
+- https://github.com/iaw-2023/IoT-Impact-js/
+- https://github.com/iaw-2023/IoT-Impact-laravel/
+- https://github.com/iaw-2023/IoT-Impact-nodejs/
+
+---
+
 
 ## IDEA DEL PROYECTO
 
