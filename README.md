@@ -1,3 +1,7 @@
+
+[![en](https://img.shields.io/badge/lang-en-red.svg)](https://github.com/rodrikraus/IoT-Impact-laravel/blob/main/README-EN.md)
+[![es](https://img.shields.io/badge/lang-es-yellow.svg)](https://github.com/rodrikraus/IoT-Impact-laravel/blob/main/README.md)
+
 ## Deploys
 ### Vercel:
 https://iot-impact-js.vercel.app/
@@ -19,6 +23,7 @@ https://admin-burger-planet.chewer.net/
 - https://github.com/iaw-2023/IoT-Impact-nodejs/
 
 ---
+
 
 ## IDEA DEL PROYECTO
 
@@ -65,7 +70,13 @@ Además, utilizando algún mecanismo de filtrado, se podrá obtener por API las 
 - Products
 - Products_Category
 
-
+### Login screen
+![Login screen](docs/screen1.png)
+### Products screen
+![](docs/screen2.png)
+![](docs/screen3.png)
+### Agregando un nuevo producto
+![](docs/screen4.png)
 
 
 ## DETALLES DEL PROYECTO JAVASCRIPT - REACT:
@@ -84,19 +95,17 @@ El usuario podrá armar su pedido agregando productos a su carrito, para luego d
 
 ### Extras:
 
-#### Comandos útiles:
-En la carpeta raíz del proyecto:
+#### Como correr el proyecto:
+Instalar PHP y composer (para instalar composer en windows quizas sea necesario activar todas las extensiones en el archivo php.ini).
+Crear la base de datos en pgAdmin y poner los datos de accesso en el archivo .env
+Estando en la carpeta raíz del proyecto correr:
+- composer install
+- php artisan migrate (crea las tablas en la base de datos)
+- php artisan db:seed (ejecuta los seeders, llenando las tablas de la base de datos con los datos que especifique el seeder)
+- php artisan serve (levantar el servidor)
 
-``` 
-composer install
-cp .env.example .env
-php artisan key:generate
-npm install
-npm run build
-php artisan migrate
-php artisan db:seed
-php artisan serve
-```
+
+
 #### Docker
 En la carpeta [db-setup-docker](db-setup-docker/) se encuentra el archivo [docker-compose.yml](db-setup-docker/docker-compose.yml), el cual levanta PostgreSQL y pgAdmin.
 
